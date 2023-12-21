@@ -89,7 +89,7 @@ toggleCarrito.addEventListener('click', () => {
 
 // Boton filtrar
 BTN.addEventListener("click", function() {
-    const FILTRO_TIPO = prompt("Ingresa el tipo de producto (Baterias, Neumaticos, Aceites o Filtros):").toUpperCase();
+    const FILTRO_TIPO = prompt("Ingresa el tipo de producto (Baterias, Neumaticos, Aceites, Filtros o cualquier categoria existente):").toUpperCase();
 
     if (FILTRO_TIPO && (FILTRO_TIPO === "BATERIAS" || FILTRO_TIPO === "NEUMATICOS" || FILTRO_TIPO === "ACEITES" || FILTRO_TIPO === "FILTROS")) {
 
@@ -117,7 +117,7 @@ BTN.addEventListener("click", function() {
     
     } else {
 
-        alert("Por favor, ingresa un tipo válido (Baterias o Neumaticos).");
+        alert("Por favor, ingresa un tipo válido (Baterias, Neumaticos, Filtros, Aceites o cualquier categoria existente).");
         TITULO_PRINCIPAL.innerText = "Todos los Productos";
         cargarProductos(ARRAY_PRODUCTOS);
     }
