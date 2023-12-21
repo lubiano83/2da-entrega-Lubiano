@@ -87,16 +87,29 @@ toggleCarrito.addEventListener('click', () => {
     CARRITO.classList.toggle('mostrar-carrito'); // Usa toggle para alternar la clase
 });
 
+// para que el navbar se cierre al apretar alguna opcion
+function cerrarNavbar() {
+    const navbar = document.querySelector('.navbar-collapse');
+    if (navbar.classList.contains('show')) {
+      navbar.classList.remove('show');
+    }
+}
+
+function toggleNavbar() {
+    const navbar = document.querySelector('.navbar-collapse');
+    navbar.classList.toggle('show');
+}
+
 // Boton filtrar
 BTN.addEventListener("click", function() {
     const FILTRO_TIPO = prompt("Ingresa el tipo de producto (Baterias, Neumaticos, Aceites, Filtros o cualquier categoria existente):").toUpperCase();
-
-    if (FILTRO_TIPO && (FILTRO_TIPO === "BATERIAS" || FILTRO_TIPO === "NEUMATICOS" || FILTRO_TIPO === "ACEITES" || FILTRO_TIPO === "FILTROS")) {
-
+     
+    if (FILTRO_TIPO && (FILTRO_TIPO === "NEUMATICOS" || FILTRO_TIPO === "BATERIAS" || FILTRO_TIPO === "ACEITES" || FILTRO_TIPO === "FILTROS")) {
+        
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.tipo === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = FILTRO_TIPO;
-        
+
     } else if (FILTRO_TIPO && (FILTRO_TIPO === "HANKOOK" || FILTRO_TIPO === "MANN" || FILTRO_TIPO === "SHELL")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.marca === FILTRO_TIPO);

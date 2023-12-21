@@ -5,7 +5,7 @@
 margin: 141px 30px 30px 30px;
     .filtros__nav {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column-reverse wrap;
         justify-content: center;
         align-items: center;
         margin: 0px 30px 30px 30px;
@@ -13,8 +13,15 @@ margin: 141px 30px 30px 30px;
             color: map-get($colores, color-1);
             text-align: center;
         }
+
+        .navbar {
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
         .navbar-toggler {
             background-color: map-get($colores, color-2);
+            margin: 0 auto;
         }
 
         .navbar-nav {
@@ -23,7 +30,7 @@ margin: 141px 30px 30px 30px;
             text-align: center;
             background-color: map-get($colores, color-1);
             padding: 0;
-            margin-left: -47px;
+            margin: 0 auto;
 
             .nav-link {
                 color: map-get($colores, color-6);

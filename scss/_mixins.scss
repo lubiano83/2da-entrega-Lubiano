@@ -33,9 +33,9 @@
 }
 
 #btn {
-    @include botones(map-get($colores, color-1), map-get($colores, color-6), center, map-get($colores, color-6));
+    @include botones(map-get($colores, color-6), map-get($colores, color-2), center, map-get($colores, color-2));
     border-radius: 10px;
-    margin: 20px;
+    margin: 0 auto;
     &:hover {
         background-color: map-get($colores, color-4);
         color: map-get($colores, color-1);

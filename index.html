@@ -152,7 +152,6 @@
             <!-- titulo -->
             <h2 id="tituloPrincipal">Todos los Productos</h2>
             <!-- Nav Bootstrap -->
-            <button id="btn">Filtros</button>
             <nav class="navbar">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -163,23 +162,25 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" id="TODOS" href="#productos__contenedor">todos</a>
+                                <a class="nav-link" id="TODOS" href="#productos__contenedor" onclick="cerrarNavbar()">todos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="NEUMATICOS" href="#productos__contenedor">neumaticos</a>
+                                <a class="nav-link" id="NEUMATICOS" href="#productos__contenedor" onclick="cerrarNavbar()">neumaticos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="BATERIAS" href="#productos__contenedor">baterias</a>
+                                <a class="nav-link" id="BATERIAS" href="#productos__contenedor" onclick="cerrarNavbar()">baterias</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="ACEITES" href="#productos__contenedor">aceites</a>
+                                <a class="nav-link" id="ACEITES" href="#productos__contenedor" onclick="cerrarNavbar()">aceites</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="FILTROS" href="#productos__contenedor">filtros</a>
+                                <a class="nav-link" id="FILTROS" href="#productos__contenedor" onclick="cerrarNavbar()">filtros</a>
                             </li>
                         </ul>
                     </div>
                 </div>
+                <!-- Boton Prompt -->
+                <button id="btn">Filtros</button>
             </nav>
         </article>
     </section>
