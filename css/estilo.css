@@ -121,13 +121,16 @@ h5 {
   color: #342E3C;
   text-align: center;
 }
-.filtros .filtros__nav .navbar {
-  gap: 20px;
+.filtros .filtros__nav .nav-btn {
+  width: auto;
   margin-bottom: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 .filtros .filtros__nav .navbar-toggler {
   background-color: #454B5F;
-  margin: 0 auto;
 }
 .filtros .filtros__nav .navbar-nav {
   position: absolute;
@@ -135,7 +138,7 @@ h5 {
   text-align: center;
   background-color: #342E3C;
   padding: 0;
-  margin: 0 auto;
+  margin-left: -48px;
 }
 .filtros .filtros__nav .navbar-nav .nav-link {
   color: #8ED3C4;
@@ -221,7 +224,7 @@ h5 {
   width: 90px;
   text-align: center;
   border-radius: 10px;
-  margin: 0 auto;
+  margin-bottom: 10px;
 }
 #btn:hover {
   background-color: #5B8D9F;
@@ -356,6 +359,23 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Mixins Mobile */
+/* 360px & 701px */
+@media screen and (min-width: 360px) and (max-width: 701px) {
+  .carousel {
+    top: 218px;
+  }
+  .filtros {
+    margin: 248px 30px 30px 30px;
+  }
+  .carrito {
+    margin-top: 218px;
+  }
+  .carrito .carrito__contenedor {
+    height: calc(100vh - 391px);
+  }
 }
 
 /*# sourceMappingURL=estilo.css.map */

@@ -1,0 +1,25 @@
+/* Mixins Mobile */
+
+@mixin mobile ($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+    
+        @content;
+    }
+}
+
+/* 360px & 701px */
+@include mobile(360px, 701px) {
+    .carousel {
+        top: 218px;
+    }
+    .filtros {
+        margin: 248px 30px 30px 30px;
+    }
+    .carrito {
+        margin-top: 218px;
+    }
+    .carrito .carrito__contenedor {
+        height: calc(100vh - 391px);
+    }
+}
+
