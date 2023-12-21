@@ -1,0 +1,61 @@
+/* Footer */
+
+.footer {
+    width: 100%;
+    background-color: map-get($colores, color-1);
+    border-top: 1px solid map-get($colores, color-6);
+    height: auto;
+
+    .footer__contenedor {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        .contenedor__formulario {
+            width: 30%;
+            min-width: 300px;
+            margin: 30px;
+            color: map-get($colores, color-6 );
+            text-align: center;
+    
+            .input, .textarea {
+                text-align: center;
+                color: map-get($colores, color-1);
+                background-color: map-get($colores, color-6);
+                font-size: map-get($sizes, size-h5);
+            }
+            .textarea {
+                height: 125px;
+            }
+        }
+
+        .contenedor__logo {
+            .logo {
+                margin: 0px 30px 30px 30px;
+                font-weight: bold;
+                color: map-get($colores, color-6);
+                font-size: map-get($sizes, size-h1);
+                &:hover {
+                    color: map-get($colores, color-4);
+                }
+            }
+        }
+
+        .contenedor__texto {
+            text-align: center;
+            color: map-get($colores, color-6);
+            margin: 0px 30px 0px 30px;
+            h4 {
+                line-height: 40px;
+            }
+            h3 {
+                font-size: map-get($sizes, size-h2);
+                font-weight: bold;
+                color: map-get($colores, color-6);
+                &:hover {
+                    color: map-get($colores, color-4);
+                }
+            }
+        }
+    }
+}

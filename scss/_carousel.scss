@@ -1,0 +1,15 @@
+/* Carousel */
+
+.carousel {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    top: 111px;
+   
+    .carousel__foto {
+        width: 100%;
+        aspect-ratio: 16/9;
+    }
+}

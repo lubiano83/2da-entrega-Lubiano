@@ -1,0 +1,63 @@
+/* Header */
+
+.header {
+    background-color: map-get($colores, color-1);
+    border-bottom: 1px solid map-get($colores, color-6);
+    width: 100%;
+    position: fixed;
+    z-index: 3;
+
+    .header__contenedor {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        .contenedor__logo {
+            .logo {
+                margin: 10px 30px 20px 30px;
+                font-weight: bold;
+                color: map-get($colores, color-6);
+
+                &:hover {
+                    color: map-get($colores, color-4);
+                }
+            }
+        }
+
+        .contenedor__link {
+            margin: 0px 25px 0px 25px;
+
+            .svg {
+                height: 50px;
+                width: 50px;
+                color: map-get($colores, color-6);
+                margin: 0px 5px 0px 5px;
+
+                &:hover {
+                    scale: 1.2;
+                    color: map-get($colores, color-4);
+                }
+            }
+        }
+
+        .contenedor__carrito {
+            margin: 30px;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+
+            .svg {
+                height: 50px;
+                width: 50px;
+                color: map-get($colores, color-6);
+
+                &:hover {
+                    scale: 1.2;
+                    color: map-get($colores, color-4);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+/* Carrito */
+
+.mostrar-carrito {
+    display: none !important;
+}
+.carrito {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: map-get($colores, color-1);
+    position: fixed;
+    z-index: 2;
+    margin-top: 111px;
+    width: 360px;
+    right: 0;
+    top: 0;
+    border-left: 1px solid map-get($colores, color-6);
+    .carrito__contenedor {
+        margin-top: 30px;
+        overflow-y: scroll;
+        height: calc(100vh - 291px);
+        .contenedor__box {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 30px 30px 30px;
+            border-radius: 15px;
+            border: 1px solid map-get($colores, color-6);
+            overflow: hidden;
+            .box__foto {
+                width: 300px;
+                aspect-ratio: 1/1;
+    
+                .foto {
+                    width: 100%;
+                }
+            }
+    
+            .box__texto {
+                color: map-get($colores, color-6);
+                margin: 20px 0px 20px 10px;
+            }
+    
+            .box__eliminar {
+                .svg {
+                    position: relative;
+                    right: -150;
+                    height: 50px;
+                    width: 50px;
+                    color: map-get($colores, color-6);
+                    margin-right: 20px;
+                    &:hover {
+                        scale: 1.2;
+                        color: map-get($colores, color-4);
+                    }
+                }
+            }
+        }
+    }
+    .contenedor__total {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 30px;
+        .total {
+            color: map-get($colores, color-6);
+            text-align: center;
+        }
+        .pagar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

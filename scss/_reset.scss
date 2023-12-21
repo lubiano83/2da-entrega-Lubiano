@@ -1,0 +1,17 @@
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+
+.body {
+    background-image: linear-gradient(to top, #454b5f, #475166, #4a576c, #4c5d73, #4e6379, #506b81, #537489, #557c91, #59899c, #5e96a5, #65a4ae, #6eb1b5);
+    background-color: map-get($colores, color-3);
+    a {
+        text-decoration: none;
+    }
+}
