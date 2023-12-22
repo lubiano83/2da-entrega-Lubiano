@@ -163,6 +163,7 @@ h5 {
   margin: 0px 15px 30px 15px;
   background-color: #342E3C;
   color: #8ED3C4;
+  box-shadow: 5px 5px 5px #342E3C;
 }
 .productos #productosContenedor .contenedor__box:hover {
   scale: 1.05;

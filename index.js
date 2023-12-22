@@ -65,14 +65,17 @@ function cargarProductos (productosElegidos){
 } cargarProductos(ARRAY_PRODUCTOS);
 
 // Nav filtrar
+function capitalizarPrimeraLetra(texto) {
+    return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+}
+
 BOTON_NAV.forEach(boton => {
 
     boton.addEventListener("click", (e) => {
-
-        if(e.currentTarget.id != "TODOS") {
+        if (e.currentTarget.id !== "TODOS") {
             const PRODUCTO_CATEGORIA = ARRAY_PRODUCTOS.find(contenedor__box => contenedor__box.tipo === e.currentTarget.id);
-            TITULO_PRINCIPAL.innerText = PRODUCTO_CATEGORIA.tipo;
-
+            TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(PRODUCTO_CATEGORIA.tipo);
+    
             const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.tipo === e.currentTarget.id);
             cargarProductos(PRODUCTOS_FILTRADOS);
         } else {
@@ -108,25 +111,25 @@ BTN.addEventListener("click", function() {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.tipo === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
-        TITULO_PRINCIPAL.innerText = FILTRO_TIPO;
+        TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
 
     } else if (FILTRO_TIPO && (FILTRO_TIPO === "HANKOOK" || FILTRO_TIPO === "MANN" || FILTRO_TIPO === "SHELL")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.marca === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
-        TITULO_PRINCIPAL.innerText = FILTRO_TIPO;
+        TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
 
     } else if (FILTRO_TIPO && (FILTRO_TIPO === "K715" || FILTRO_TIPO === "H724" || FILTRO_TIPO === "H308" || FILTRO_TIPO === "MF54321" || FILTRO_TIPO === "MF55457" || FILTRO_TIPO === "MF47600" || FILTRO_TIPO === "5W-30" || FILTRO_TIPO === "15W-40" || FILTRO_TIPO === "10W-40" || FILTRO_TIPO === "C30171" || FILTRO_TIPO === "HU718/5X" || FILTRO_TIPO === "W610/6")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.modelo === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
-        TITULO_PRINCIPAL.innerText = FILTRO_TIPO;
+        TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
     
     } else if (FILTRO_TIPO && (FILTRO_TIPO === "155/65R13" || FILTRO_TIPO === "185/65R14" || FILTRO_TIPO === "175/60R15" || FILTRO_TIPO === "45AH" || FILTRO_TIPO === "55AH" || FILTRO_TIPO === "60AH" || FILTRO_TIPO === "HX8" || FILTRO_TIPO === "HX5" || FILTRO_TIPO === "R5" || FILTRO_TIPO === "AIRE" || FILTRO_TIPO === "ELEMENTO" || FILTRO_TIPO === "ACEITE")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.medida === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
-        TITULO_PRINCIPAL.innerText = FILTRO_TIPO;
+        TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
     
     } else {
 
