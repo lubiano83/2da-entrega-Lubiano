@@ -120,18 +120,15 @@ function toggleNavbar() {
     navbar.classList.toggle('show');
 }
 
-// // filtro de busqueda por palabras no exactas
+// // // filtro de busqueda por palabras no exactas
 // BTN.addEventListener("click", function() {
-//     const FILTRO_TIPO = prompt("Ingresa la categoría (Baterias, Neumaticos, Aceites, Filtros u otra categoría existente):").toUpperCase();
+//     const FILTRO_TIPO = prompt("Ingresa la categoría (Baterias, Neumaticos, Aceites, Filtros u otra existente):").toUpperCase();
 
 //     const regex = new RegExp(FILTRO_TIPO, 'i'); // 'i' hace la búsqueda insensible a mayúsculas/minúsculas
     
 //     const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => {
 //         // Aquí comparas los valores con la expresión regular
-//         return regex.test(contenedor__box.tipo) ||
-//                regex.test(contenedor__box.marca) ||
-//                regex.test(contenedor__box.modelo) ||
-//                regex.test(contenedor__box.otro);
+//         return regex.test(contenedor__box.tipo) || regex.test(contenedor__box.marca) || regex.test(contenedor__box.modelo) || regex.test(contenedor__box.otro);
 //     });
 
 //     if (FILTRO_TIPO && PRODUCTOS_FILTRADOS.length > 0) {
@@ -144,10 +141,9 @@ function toggleNavbar() {
 //     }
 // })
 
-
 // Boton filtrar
 BTN.addEventListener("click", function() {
-    const FILTRO_TIPO = prompt("Ingresa la categoria (Baterias, Neumaticos, Aceites, Filtros o cualquier categoria existente):").toUpperCase();
+    const FILTRO_TIPO = prompt("Ingresa la categoria (Baterias, Neumaticos, Aceites, Filtros u otra existente):").toUpperCase();
      
     if (FILTRO_TIPO && (FILTRO_TIPO === "NEUMATICOS" || FILTRO_TIPO === "BATERIAS" || FILTRO_TIPO === "ACEITES" || FILTRO_TIPO === "FILTROS" || FILTRO_TIPO === "AROMATIZANTES")) {
         
@@ -175,7 +171,7 @@ BTN.addEventListener("click", function() {
     
     } else {
 
-        alert("Por favor, ingresa una categoria válida (Baterias, Neumaticos, Filtros, Aceites o cualquier categoria existente).");
+        alert("Por favor, ingresa una categoria válida (Baterias, Neumaticos, Filtros, Aceites u otra existente).");
         TITULO_PRINCIPAL.innerText = "Todos los Productos";
         cargarProductos(ARRAY_PRODUCTOS);
     }
