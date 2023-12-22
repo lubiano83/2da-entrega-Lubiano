@@ -33,6 +33,9 @@
     .header .header__contenedor .contenedor__link {
         margin: 0px 25px 20px 25px;
     }
+    .footer .footer__contenedor {
+        padding-bottom: 20px;
+    }
 }
 
 /* 592px & 701px */
@@ -58,12 +61,18 @@
     .header .header__contenedor .contenedor__carrito {
         margin: 0px 30px 20px 30px;
     }
+    .footer .footer__contenedor {
+        padding-bottom: 20px;
+    }
 }
 
 /* 702px & 709px */
 @include mobile(702px, 709px) {
     .footer .footer__contenedor .contenedor__formulario {
         width: 80%;
+    }
+    .footer .footer__contenedor {
+        padding-bottom: 20px;
     }
 }
 
