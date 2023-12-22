@@ -7,19 +7,64 @@
     }
 }
 
-/* 360px & 701px */
-@include mobile(360px, 701px) {
+/* 360px & 591px */
+@include mobile(360px, 591px) {
     .carousel {
-        top: 218px;
+        top: 178px;
     }
     .filtros {
         margin: 248px 30px 30px 30px;
     }
     .carrito {
-        margin-top: 218px;
+        margin-top: 178px;
     }
     .carrito .carrito__contenedor {
-        height: calc(100vh - 391px);
+        height: calc(100vh - 358px);
+    }
+    .header .header__contenedor .contenedor__carrito {
+        margin: 30px;    
+    }
+    .footer .footer__contenedor .contenedor__formulario {
+        width: 80%;
+    }
+    .header .header__contenedor .contenedor__carrito {
+        margin: 0px 30px 20px 30px;
+    }
+    .header .header__contenedor .contenedor__link {
+        margin: 0px 25px 20px 25px;
     }
 }
+
+/* 592px & 701px */
+@include mobile(592px, 701px) {
+    .carousel {
+        top: 178px;
+    }
+    .filtros {
+        margin: 248px 30px 30px 30px;
+    }
+    .carrito {
+        margin-top: 178px;
+    }
+    .carrito .carrito__contenedor {
+        height: calc(100vh - 358px);
+    }
+    .header .header__contenedor .contenedor__carrito {
+        margin: 30px;    
+    }
+    .footer .footer__contenedor .contenedor__formulario {
+        width: 80%;
+    }
+    .header .header__contenedor .contenedor__carrito {
+        margin: 0px 30px 20px 30px;
+    }
+}
+
+/* 702px & 709px */
+@include mobile(702px, 709px) {
+    .footer .footer__contenedor .contenedor__formulario {
+        width: 80%;
+    }
+}
+
 

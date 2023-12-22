@@ -2,7 +2,7 @@
 
 .carousel {
     width: 100%;
-    aspect-ratio: 4.33/2;
+    aspect-ratio: 16/9;
     background-color: white;
     position: relative;
     z-index: 1;
@@ -10,6 +10,6 @@
    
     .carousel__foto {
         width: 100%;
-        aspect-ratio: 4.33/2;
+        aspect-ratio: 16/9;
     }
 }

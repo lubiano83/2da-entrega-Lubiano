@@ -95,7 +95,7 @@ h5 {
 /* Carousel */
 .carousel {
   width: 100%;
-  aspect-ratio: 4.33/2;
+  aspect-ratio: 16/9;
   background-color: white;
   position: relative;
   z-index: 1;
@@ -103,7 +103,7 @@ h5 {
 }
 .carousel .carousel__foto {
   width: 100%;
-  aspect-ratio: 4.33/2;
+  aspect-ratio: 16/9;
 }
 
 /* Filtros */
@@ -362,19 +362,61 @@ h5 {
 }
 
 /* Mixins Mobile */
-/* 360px & 701px */
-@media screen and (min-width: 360px) and (max-width: 701px) {
+/* 360px & 591px */
+@media screen and (min-width: 360px) and (max-width: 591px) {
   .carousel {
-    top: 218px;
+    top: 178px;
   }
   .filtros {
     margin: 248px 30px 30px 30px;
   }
   .carrito {
-    margin-top: 218px;
+    margin-top: 178px;
   }
   .carrito .carrito__contenedor {
-    height: calc(100vh - 391px);
+    height: calc(100vh - 358px);
+  }
+  .header .header__contenedor .contenedor__carrito {
+    margin: 30px;
+  }
+  .footer .footer__contenedor .contenedor__formulario {
+    width: 80%;
+  }
+  .header .header__contenedor .contenedor__carrito {
+    margin: 0px 30px 20px 30px;
+  }
+  .header .header__contenedor .contenedor__link {
+    margin: 0px 25px 20px 25px;
+  }
+}
+/* 592px & 701px */
+@media screen and (min-width: 592px) and (max-width: 701px) {
+  .carousel {
+    top: 178px;
+  }
+  .filtros {
+    margin: 248px 30px 30px 30px;
+  }
+  .carrito {
+    margin-top: 178px;
+  }
+  .carrito .carrito__contenedor {
+    height: calc(100vh - 358px);
+  }
+  .header .header__contenedor .contenedor__carrito {
+    margin: 30px;
+  }
+  .footer .footer__contenedor .contenedor__formulario {
+    width: 80%;
+  }
+  .header .header__contenedor .contenedor__carrito {
+    margin: 0px 30px 20px 30px;
+  }
+}
+/* 702px & 709px */
+@media screen and (min-width: 702px) and (max-width: 709px) {
+  .footer .footer__contenedor .contenedor__formulario {
+    width: 80%;
   }
 }
 
