@@ -120,27 +120,6 @@ function toggleNavbar() {
     navbar.classList.toggle('show');
 }
 
-// // // filtro de busqueda por palabras no exactas
-// BTN.addEventListener("click", function() {
-//     const FILTRO_TIPO = prompt("Ingresa la categoría (Baterias, Neumaticos, Aceites, Filtros u otra existente):").toUpperCase();
-
-//     const regex = new RegExp(FILTRO_TIPO, 'i'); // 'i' hace la búsqueda insensible a mayúsculas/minúsculas
-    
-//     const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => {
-//         // Aquí comparas los valores con la expresión regular
-//         return regex.test(contenedor__box.tipo) || regex.test(contenedor__box.marca) || regex.test(contenedor__box.modelo) || regex.test(contenedor__box.otro);
-//     });
-
-//     if (FILTRO_TIPO && PRODUCTOS_FILTRADOS.length > 0) {
-//         cargarProductos(PRODUCTOS_FILTRADOS);
-//         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
-//     } else {
-//         alert("Ingresa una categoría válida (Baterias, Neumaticos, Filtros, Aceites u otra existente).");
-//         TITULO_PRINCIPAL.innerText = "Todos los Productos";
-//         cargarProductos(ARRAY_PRODUCTOS);
-//     }
-// })
-
 // Boton filtrar
 BTN.addEventListener("click", function() {
     const FILTRO_TIPO = prompt("Ingresa la categoria (Baterias, Neumaticos, Aceites, Filtros u otra existente):").toUpperCase();
