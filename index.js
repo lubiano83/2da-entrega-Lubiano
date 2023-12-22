@@ -39,6 +39,20 @@ const BTN = document.getElementById("btn"); // document. es un objeto y getEleme
 const TOGGLE_CARRITO = document.getElementById('toggleCarrito');
 const CARRITO = document.querySelector('.carrito');
 
+// Para que el precio se vea con un punto
+function formatearPrecio(precio) {
+    const precioString = precio.toString(); // Convertir el precio a string
+    const longitud = precioString.length;
+
+    if (longitud <= 3) {
+        return precioString; // Si el precio tiene 3 o menos dígitos, devuelve el precio sin modificar
+    } else {
+        const parteEntera = precioString.slice(0, longitud - 3); // Obtener la parte entera del precio
+        const parteDecimal = precioString.slice(longitud - 3); // Obtener los últimos 3 dígitos como parte decimal
+        return `${parteEntera}.${parteDecimal}`; // Devolver el precio formateado con un punto después de los primeros 3 dígitos
+    }
+}
+
 // Cargar Productos
 function cargarProductos (productosElegidos){
 
@@ -55,7 +69,7 @@ function cargarProductos (productosElegidos){
                 <h4>Marca: ${contenedor__box.marca}</h4>
                 <h4>Modelo: ${contenedor__box.modelo}</h4>
                 <h4>Medida: ${contenedor__box.medida}</h4>
-                <h4>Precio: $${contenedor__box.precio}</h4>
+                <h4>Precio: $${formatearPrecio(contenedor__box.precio)}</h4>
                 <button class="agregar" id="${contenedor__box.codigo}">Agregar</button>
             </div>
         `;
@@ -103,9 +117,9 @@ function toggleNavbar() {
     navbar.classList.toggle('show');
 }
 
-// Boton filtrar
+// Boton filtrarx
 BTN.addEventListener("click", function() {
-    const FILTRO_TIPO = prompt("Ingresa el tipo de producto (Baterias, Neumaticos, Aceites, Filtros o cualquier categoria existente):").toUpperCase();
+    const FILTRO_TIPO = prompt("Ingresa la categoria (Baterias, Neumaticos, Aceites, Filtros o cualquier categoria existente):").toUpperCase();
      
     if (FILTRO_TIPO && (FILTRO_TIPO === "NEUMATICOS" || FILTRO_TIPO === "BATERIAS" || FILTRO_TIPO === "ACEITES" || FILTRO_TIPO === "FILTROS")) {
         
@@ -133,7 +147,7 @@ BTN.addEventListener("click", function() {
     
     } else {
 
-        alert("Por favor, ingresa un tipo válido (Baterias, Neumaticos, Filtros, Aceites o cualquier categoria existente).");
+        alert("Por favor, ingresa una categoria válida (Baterias, Neumaticos, Filtros, Aceites o cualquier categoria existente).");
         TITULO_PRINCIPAL.innerText = "Todos los Productos";
         cargarProductos(ARRAY_PRODUCTOS);
     }
