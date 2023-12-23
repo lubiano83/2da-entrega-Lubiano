@@ -166,51 +166,49 @@ BTN.addEventListener("click", function() {
     }
 })
 
-// Barra Busqueda
+// barra de busqueda
 BOTON_BUSQUEDA.addEventListener('click', function(e) {
 
     const BARRA_BUSQUEDA = document.getElementById("barraBusqueda");
-    const TEXTO_BUSQUEDA = BARRA_BUSQUEDA.value.toUpperCase();
+    const TEXTO_BUSQUEDA = BARRA_BUSQUEDA.value.trim().toUpperCase();
     e.preventDefault();
 
-    if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA === "NEUMATICOS" || TEXTO_BUSQUEDA === "BATERIAS" || TEXTO_BUSQUEDA === "ACEITES" || TEXTO_BUSQUEDA === "FILTROS" || TEXTO_BUSQUEDA === "AROMATIZANTES")) {
+    if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA.includes("NEUMATICOS") || TEXTO_BUSQUEDA.includes("BATERIAS") || TEXTO_BUSQUEDA.includes("ACEITES") || TEXTO_BUSQUEDA.includes("FILTROS") || TEXTO_BUSQUEDA.includes("AROMATIZANTES"))) {
         
-        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.tipo === TEXTO_BUSQUEDA);
-        cargarProductos(PRODUCTOS_FILTRADOS);
-        TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
-        console.log(TEXTO_BUSQUEDA);
-
-    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA === "HANKOOK" || TEXTO_BUSQUEDA === "MANN" || TEXTO_BUSQUEDA === "SHELL" || TEXTO_BUSQUEDA === "PALOMA")) {
-        
-        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.marca === TEXTO_BUSQUEDA);
+        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.tipo.toUpperCase().includes(TEXTO_BUSQUEDA));
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
 
-    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA === "K715" || TEXTO_BUSQUEDA === "H724" || TEXTO_BUSQUEDA === "H308" || TEXTO_BUSQUEDA === "MF" || TEXTO_BUSQUEDA === "MF" || TEXTO_BUSQUEDA === "MF" || TEXTO_BUSQUEDA === "HX8" || TEXTO_BUSQUEDA === "HX5" || TEXTO_BUSQUEDA === "R5" || TEXTO_BUSQUEDA === "C" || TEXTO_BUSQUEDA === "HU" || TEXTO_BUSQUEDA === "W" || TEXTO_BUSQUEDA === "PARFUM" || TEXTO_BUSQUEDA === "HAPPY BAG" || TEXTO_BUSQUEDA === "WOODY")) {
+    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA.includes("HANKOOK") || TEXTO_BUSQUEDA.includes("MANN") || TEXTO_BUSQUEDA.includes("SHELL") || TEXTO_BUSQUEDA.includes("PALOMA"))) {
         
-        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.modelo === TEXTO_BUSQUEDA);
+        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.marca.toUpperCase().includes(TEXTO_BUSQUEDA));
+        cargarProductos(PRODUCTOS_FILTRADOS);
+        TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
+
+    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA.includes("K715") || TEXTO_BUSQUEDA.includes("H724") || TEXTO_BUSQUEDA.includes("H308") || TEXTO_BUSQUEDA.includes("MF") || TEXTO_BUSQUEDA.includes("HX8") || TEXTO_BUSQUEDA.includes("HX5") || TEXTO_BUSQUEDA.includes("R5") || TEXTO_BUSQUEDA.includes("C") || TEXTO_BUSQUEDA.includes("HU") || TEXTO_BUSQUEDA.includes("W") || TEXTO_BUSQUEDA.includes("PARFUM") || TEXTO_BUSQUEDA.includes("HAPPY BAG") || TEXTO_BUSQUEDA.includes("WOODY"))) {
+        
+        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.modelo.toUpperCase().includes(TEXTO_BUSQUEDA));
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
     
-    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA === "155/65R13" || TEXTO_BUSQUEDA === "185/65R14" || TEXTO_BUSQUEDA === "175/60R15" || TEXTO_BUSQUEDA === "54321" || TEXTO_BUSQUEDA === "55457" || TEXTO_BUSQUEDA === "47600" || TEXTO_BUSQUEDA === "5W-30" || TEXTO_BUSQUEDA === "15W-40" || TEXTO_BUSQUEDA === "10W-40" || TEXTO_BUSQUEDA === "30171" || TEXTO_BUSQUEDA === "718/5X" || TEXTO_BUSQUEDA === "610/6" || TEXTO_BUSQUEDA === "" || TEXTO_BUSQUEDA === "" || TEXTO_BUSQUEDA === "")) {
+    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA.includes("155/65R13") || TEXTO_BUSQUEDA.includes("185/65R14") || TEXTO_BUSQUEDA.includes("175/60R15") || TEXTO_BUSQUEDA.includes("54321") || TEXTO_BUSQUEDA.includes("55457") || TEXTO_BUSQUEDA.includes("47600") || TEXTO_BUSQUEDA.includes("5W-30") || TEXTO_BUSQUEDA.includes("15W-40") || TEXTO_BUSQUEDA.includes("10W-40") || TEXTO_BUSQUEDA.includes("30171") || TEXTO_BUSQUEDA.includes("718/5X") || TEXTO_BUSQUEDA.includes("610/6"))) {
         
-        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.medida === TEXTO_BUSQUEDA);
+        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.medida.toUpperCase().includes(TEXTO_BUSQUEDA));
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
     
-    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA === "R13" || TEXTO_BUSQUEDA === "R14" || TEXTO_BUSQUEDA === "R15" || TEXTO_BUSQUEDA === "45AH" || TEXTO_BUSQUEDA === "55AH" || TEXTO_BUSQUEDA === "60AH" || TEXTO_BUSQUEDA === "4L" || TEXTO_BUSQUEDA === "4L" || TEXTO_BUSQUEDA === "4L" || TEXTO_BUSQUEDA === "AIRE" || TEXTO_BUSQUEDA === "ELEMENTO" || TEXTO_BUSQUEDA === "ACEITE" || TEXTO_BUSQUEDA === "VAINILLA" || TEXTO_BUSQUEDA === "FLORAL" || TEXTO_BUSQUEDA === "SPORT")) {
+    } else if (TEXTO_BUSQUEDA && (TEXTO_BUSQUEDA.includes("R13") || TEXTO_BUSQUEDA.includes("R14") || TEXTO_BUSQUEDA.includes("R15") || TEXTO_BUSQUEDA.includes("45AH") || TEXTO_BUSQUEDA.includes("55AH") || TEXTO_BUSQUEDA.includes("60AH") || TEXTO_BUSQUEDA.includes("4L") || TEXTO_BUSQUEDA.includes("AIRE") || TEXTO_BUSQUEDA.includes("ELEMENTO") || TEXTO_BUSQUEDA.includes("ACEITE") || TEXTO_BUSQUEDA.includes("VAINILLA") || TEXTO_BUSQUEDA.includes("FLORAL") || TEXTO_BUSQUEDA.includes("SPORT"))) {
         
-        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.descripcion === TEXTO_BUSQUEDA);
+        const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.descripcion.toUpperCase().includes(TEXTO_BUSQUEDA));
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
     
     } else {
 
-        alert("Por favor, ingresa una categoria válida (Baterias, Neumaticos, Filtros, Aceites u otra existente).");
+        alert("Por favor, ingresa una categoría válida (Baterias, Neumaticos, Filtros, Aceites u otra existente).");
         TITULO_PRINCIPAL.innerText = "Todos los Productos";
         cargarProductos(ARRAY_PRODUCTOS);
     }
 
     BARRA_BUSQUEDA.value = ""; // Esto borrará el texto de la barra de búsqueda
-    
 });
