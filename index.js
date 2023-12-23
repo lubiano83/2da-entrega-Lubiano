@@ -28,9 +28,9 @@ const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg","FILTROS", "MANN"
 const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg","FILTROS", "MANN", "HU718/5X", "718/5X", "ELEMENTO", 9700);
 const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg","FILTROS", "MANN", "W610/6", "610/6", "ACEITE", 6280);
 // Aromatizantes
-const PROD13 = new Producto("42088-3", "./img/paloma parfum.png","AROMATIZANTES", "PALOMA", "PARFUM", "", "VAINILLA", 1800);
-const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png","AROMATIZANTES", "PALOMA", "WOODY", "", "FLORAL", 2400);
-const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png","AROMATIZANTES", "PALOMA", "HAPPY BAG", "", "SPORT", 1890);
+const PROD13 = new Producto("42088-3", "./img/paloma parfum.png","AROMATIZANTES", "PALOMA", "PARFUM", "FRAGANCIAS", "VAINILLA", 1800);
+const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png","AROMATIZANTES", "PALOMA", "WOODY", "FRAGANCIAS", "FLORAL", 2400);
+const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png","AROMATIZANTES", "PALOMA", "HAPPY BAG", "FRAGANCIAS", "SPORT", 1890);
 
 // Contenedor Productos
 const PRODUCTOS_CONTENEDOR = document.getElementById("productosContenedor");
