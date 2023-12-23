@@ -180,13 +180,13 @@ BOTON_BUSQUEDA.addEventListener('click', function(e) {
 
     // Normalizar y limpiar cada propiedad relevante en ARRAY_PRODUCTOS para comparar
     const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => {
-        const tipoNormalized = removerAcentos(contenedor__box.tipo);
-        const marcaNormalized = removerAcentos(contenedor__box.marca);
-        const modeloNormalized = removerAcentos(contenedor__box.modelo);
-        const medidaNormalized = removerAcentos(contenedor__box.medida);
-        const descripcionNormalized = removerAcentos(contenedor__box.descripcion);
+        const TIPO_NORMALIZED = removerAcentos(contenedor__box.tipo);
+        const MARCA_NORMALIZED = removerAcentos(contenedor__box.marca);
+        const MODELO_NORMALIZED = removerAcentos(contenedor__box.modelo);
+        const MEDIDA_NORMALIZED = removerAcentos(contenedor__box.medida);
+        const DESCRIPCION_NORMALIZED = removerAcentos(contenedor__box.descripcion);
 
-        return (tipoNormalized.includes(TEXTO_BUSQUEDA) || marcaNormalized.includes(TEXTO_BUSQUEDA) || modeloNormalized.includes(TEXTO_BUSQUEDA) || medidaNormalized.includes(TEXTO_BUSQUEDA) || descripcionNormalized.includes(TEXTO_BUSQUEDA));
+        return (TIPO_NORMALIZED.includes(TEXTO_BUSQUEDA) || MARCA_NORMALIZED.includes(TEXTO_BUSQUEDA) || MODELO_NORMALIZED.includes(TEXTO_BUSQUEDA) || MEDIDA_NORMALIZED.includes(TEXTO_BUSQUEDA) || DESCRIPCION_NORMALIZED.includes(TEXTO_BUSQUEDA));
     });
 
     if (PRODUCTOS_FILTRADOS.length > 0) {
