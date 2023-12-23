@@ -28,9 +28,9 @@ const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg","FILTROS", "MANN"
 const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg","FILTROS", "MANN", "HU718/5X", "718/5X", "ELEMENTO", 9700);
 const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg","FILTROS", "MANN", "W610/6", "610/6", "ACEITE", 6280);
 // Aromatizantes
-const PROD13 = new Producto("42088-3", "./img/paloma parfum.png","AROMATIZANTES", "PALOMA", "PARFUM", "FRAGANCIAS", "VAINILLA", 1800);
-const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png","AROMATIZANTES", "PALOMA", "WOODY", "FRAGANCIAS", "FLORAL", 2400);
-const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png","AROMATIZANTES", "PALOMA", "HAPPY BAG", "FRAGANCIAS", "SPORT", 1890);
+const PROD13 = new Producto("42088-3", "./img/paloma parfum.png","AROMATIZANTES", "PALOMA", "PARFUM", "10 UNIDADES", "VAINILLA", 1800);
+const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png","AROMATIZANTES", "PALOMA", "WOODY", "1 UNIDAD", "FLORAL", 2400);
+const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png","AROMATIZANTES", "PALOMA", "HAPPY BAG", "5 UNIDADES", "SPORT", 1890);
 
 // Contenedor Productos
 const PRODUCTOS_CONTENEDOR = document.getElementById("productosContenedor");
@@ -146,7 +146,7 @@ BTN.addEventListener("click", function() {
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
     
-    } else if (FILTRO_TIPO && (FILTRO_TIPO === "155/65R13" || FILTRO_TIPO === "185/65R14" || FILTRO_TIPO === "175/60R15" || FILTRO_TIPO === "54321" || FILTRO_TIPO === "55457" || FILTRO_TIPO === "47600" || FILTRO_TIPO === "5W-30" || FILTRO_TIPO === "15W-40" || FILTRO_TIPO === "10W-40" || FILTRO_TIPO === "30171" || FILTRO_TIPO === "718/5X" || FILTRO_TIPO === "610/6" || FILTRO_TIPO === "FRAGANCIAS" || FILTRO_TIPO === "FRAGANCIAS" || FILTRO_TIPO === "FRAGANCIAS")) {
+    } else if (FILTRO_TIPO && (FILTRO_TIPO === "155/65R13" || FILTRO_TIPO === "185/65R14" || FILTRO_TIPO === "175/60R15" || FILTRO_TIPO === "54321" || FILTRO_TIPO === "55457" || FILTRO_TIPO === "47600" || FILTRO_TIPO === "5W-30" || FILTRO_TIPO === "15W-40" || FILTRO_TIPO === "10W-40" || FILTRO_TIPO === "30171" || FILTRO_TIPO === "718/5X" || FILTRO_TIPO === "610/6" || FILTRO_TIPO === "10 UNIDADES" || FILTRO_TIPO === "5 UNIDADES" || FILTRO_TIPO === "1 UNIDAD")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.medida === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
