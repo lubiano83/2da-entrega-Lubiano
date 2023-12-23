@@ -150,9 +150,9 @@
     <section class="filtros">
         <article class="filtros__nav">
             <!-- titulo -->
-            <h2 id="tituloPrincipal">Todos los Productos</h2>
-            <!-- Nav Bootstrap -->
+            <h3 id="tituloPrincipal">Todos los Productos</h3>
             <div class="nav-btn">
+                <!-- Nav Bootstrap -->
                 <nav class="navbar">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -186,7 +186,17 @@
                 </nav>
                 <!-- Boton Prompt -->
                 <button id="btn">Filtros</button>
+                <!-- Barra Bootstrap -->
+                <nav class="navbar">
+                    <div class="container-fluid">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Producto" aria-label="Search" id="barraBusqueda">
+                            <button class="btn btn-outline-success" type="submit" id="botonBusqueda">Buscar</button>
+                        </form>
+                    </div>
+                </nav>
             </div>
+            <h2 class="titulo">Filtros</h2>
         </article>
     </section>
     <!-- Productos -->

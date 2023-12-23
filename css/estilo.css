@@ -117,9 +117,14 @@ h5 {
   align-items: center;
   margin: 0px 30px 30px 30px;
 }
+.filtros .filtros__nav .titulo {
+  color: #342E3C;
+  text-align: center;
+}
 .filtros .filtros__nav #tituloPrincipal {
   color: #342E3C;
   text-align: center;
+  font-size: 48px;
 }
 .filtros .filtros__nav .nav-btn {
   width: auto;
@@ -128,6 +133,25 @@ h5 {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+}
+.filtros .filtros__nav .nav-btn .navbar {
+  margin: 10px;
+}
+.filtros .filtros__nav .nav-btn .navbar .container-fluid {
+  padding: 0;
+}
+.filtros .filtros__nav .nav-btn .navbar .container-fluid .form-control {
+  color: #342E3C;
+}
+.filtros .filtros__nav .nav-btn .navbar .container-fluid #botonBusqueda {
+  background-color: #454B5F;
+  color: #8ED3C4;
+  border: 1px solid #454B5F;
+}
+.filtros .filtros__nav .nav-btn .navbar .container-fluid #botonBusqueda:hover {
+  background-color: #5B8D9F;
+  color: #342E3C;
+  border: 1px solid #342E3C;
 }
 .filtros .filtros__nav .navbar-toggler {
   background-color: #454B5F;
@@ -231,7 +255,7 @@ h5 {
 #btn:hover {
   background-color: #5B8D9F;
   color: #342E3C;
-  border: 1px solid #5B8D9F;
+  border: 1px solid #342E3C;
 }
 
 /* Footer */
