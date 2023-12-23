@@ -16,17 +16,17 @@ const PROD1 = new Producto("50170-0", "./img/hankook K715.jpeg","NEUMATICOS", "H
 const PROD2 = new Producto("50174-3", "./img/hankook H724.jpeg","NEUMATICOS", "HANKOOK", "H724", "185/65R14", "R14", 59890);
 const PROD3 = new Producto("50595-1", "./img/hankook H308.jpeg","NEUMATICOS", "HANKOOK", "H308", "175/60R15", "R15", 49890);
 // Baterias
-const PROD4 = new Producto("09076-K", "./img/hankook MF54321.jpeg","BATERIAS", "HANKOOK", "MF", "54321", "45AH", 69890);
-const PROD5 = new Producto("09030-1", "./img/hankook MF55457.jpeg","BATERIAS", "HANKOOK", "MF", "55457", "55AH", 79890);
-const PROD6 = new Producto("09095-6", "./img/hankook MF47600.jpeg","BATERIAS", "HANKOOK", "MF", "47600", "60AH", 98980);
+const PROD4 = new Producto("09076-K", "./img/hankook MF54321.jpeg","BATERIAS", "HANKOOK", "MF54321", "45AH", "450CCA", 69890);
+const PROD5 = new Producto("09030-1", "./img/hankook MF55457.jpeg","BATERIAS", "HANKOOK", "MF55457", "55AH", "480CCA", 79890);
+const PROD6 = new Producto("09095-6", "./img/hankook MF47600.jpeg","BATERIAS", "HANKOOK", "MF47600", "60AH", "600CCA", 98980);
 // Aceites
-const PROD7 = new Producto("22212-7", "./img/shell 5w30 hx8.webp","ACEITES", "SHELL", "HX8", "5W-30", "4L", 47290);
-const PROD8 = new Producto("22135-K", "./img/shell 15w40 hx5.webp","ACEITES", "SHELL", "HX5", "15W-40", "4L", 29690);
-const PROD9 = new Producto("22013-2", "./img/10w-40 petroleo shell.jpeg","ACEITES", "SHELL", "R5", "10W-40", "4L", 35990);
+const PROD7 = new Producto("22212-7", "./img/shell 5w30 hx8.webp","ACEITES", "SHELL", "HX8", "5W-30", "BENCINA", 47290);
+const PROD8 = new Producto("22135-K", "./img/shell 15w40 hx5.webp","ACEITES", "SHELL", "HX5", "15W-40", "BENCINA", 29690);
+const PROD9 = new Producto("22013-2", "./img/10w-40 petroleo shell.jpeg","ACEITES", "SHELL", "R5", "10W-40", "PETROLEO", 35990);
 // Filtros
-const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg","FILTROS", "MANN", "C30171", "30171", "AIRE", 9900);
-const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg","FILTROS", "MANN", "HU718/5X", "718/5X", "ELEMENTO", 9700);
-const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg","FILTROS", "MANN", "W610/6", "610/6", "ACEITE", 6280);
+const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg","FILTROS", "MANN", "C30171", "30171", "FILTRO AIRE", 9900);
+const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg","FILTROS", "MANN", "HU718/5X", "718/5X", "FILTRO ELEMENTO", 9700);
+const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg","FILTROS", "MANN", "W610/6", "610/6", "FILTRO ACEITE", 6280);
 // Aromatizantes
 const PROD13 = new Producto("42088-3", "./img/paloma parfum.png","AROMATIZANTES", "PALOMA", "PARFUM", "10 UNIDADES", "VAINILLA", 1800);
 const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png","AROMATIZANTES", "PALOMA", "WOODY", "1 UNIDAD", "FLORAL", 2400);
@@ -140,19 +140,19 @@ BTN.addEventListener("click", function() {
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
 
-    } else if (FILTRO_TIPO && (FILTRO_TIPO === "K715" || FILTRO_TIPO === "H724" || FILTRO_TIPO === "H308" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "HX8" || FILTRO_TIPO === "HX5" || FILTRO_TIPO === "R5" || FILTRO_TIPO === "C30171" || FILTRO_TIPO === "HU718/5X" || FILTRO_TIPO === "W610/6" || FILTRO_TIPO === "PARFUM" || FILTRO_TIPO === "HAPPY BAG" || FILTRO_TIPO === "WOODY")) {
+    } else if (FILTRO_TIPO && (FILTRO_TIPO === "K715" || FILTRO_TIPO === "H724" || FILTRO_TIPO === "H308" || FILTRO_TIPO === "MF54321" || FILTRO_TIPO === "MF55457" || FILTRO_TIPO === "MF47600" || FILTRO_TIPO === "HX8" || FILTRO_TIPO === "HX5" || FILTRO_TIPO === "R5" || FILTRO_TIPO === "C30171" || FILTRO_TIPO === "HU718/5X" || FILTRO_TIPO === "W610/6" || FILTRO_TIPO === "PARFUM" || FILTRO_TIPO === "HAPPY BAG" || FILTRO_TIPO === "WOODY")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.modelo === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
     
-    } else if (FILTRO_TIPO && (FILTRO_TIPO === "155/65R13" || FILTRO_TIPO === "185/65R14" || FILTRO_TIPO === "175/60R15" || FILTRO_TIPO === "54321" || FILTRO_TIPO === "55457" || FILTRO_TIPO === "47600" || FILTRO_TIPO === "5W-30" || FILTRO_TIPO === "15W-40" || FILTRO_TIPO === "10W-40" || FILTRO_TIPO === "30171" || FILTRO_TIPO === "718/5X" || FILTRO_TIPO === "610/6" || FILTRO_TIPO === "10 UNIDADES" || FILTRO_TIPO === "5 UNIDADES" || FILTRO_TIPO === "1 UNIDAD")) {
+    } else if (FILTRO_TIPO && (FILTRO_TIPO === "155/65R13" || FILTRO_TIPO === "185/65R14" || FILTRO_TIPO === "175/60R15" || FILTRO_TIPO === "45AH" || FILTRO_TIPO === "55AH" || FILTRO_TIPO === "60AH" || FILTRO_TIPO === "5W-30" || FILTRO_TIPO === "15W-40" || FILTRO_TIPO === "10W-40" || FILTRO_TIPO === "30171" || FILTRO_TIPO === "718/5X" || FILTRO_TIPO === "610/6" || FILTRO_TIPO === "10 UNIDADES" || FILTRO_TIPO === "5 UNIDADES" || FILTRO_TIPO === "1 UNIDAD")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.medida === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
     
-    } else if (FILTRO_TIPO && (FILTRO_TIPO === "R13" || FILTRO_TIPO === "R14" || FILTRO_TIPO === "R15" || FILTRO_TIPO === "45AH" || FILTRO_TIPO === "55AH" || FILTRO_TIPO === "60AH" || FILTRO_TIPO === "4L" || FILTRO_TIPO === "4L" || FILTRO_TIPO === "4L" || FILTRO_TIPO === "AIRE" || FILTRO_TIPO === "ELEMENTO" || FILTRO_TIPO === "ACEITE" || FILTRO_TIPO === "VAINILLA" || FILTRO_TIPO === "FLORAL" || FILTRO_TIPO === "SPORT")) {
+    } else if (FILTRO_TIPO && (FILTRO_TIPO === "R13" || FILTRO_TIPO === "R14" || FILTRO_TIPO === "R15" || FILTRO_TIPO === "450CCA" || FILTRO_TIPO === "480CCA" || FILTRO_TIPO === "600CCA" || FILTRO_TIPO === "BENCINA" || FILTRO_TIPO === "BENCINA" || FILTRO_TIPO === "PETROLEO" || FILTRO_TIPO === "FILTRO AIRE" || FILTRO_TIPO === "FILTRO ELEMENTO" || FILTRO_TIPO === "FILTRO ACEITE" || FILTRO_TIPO === "VAINILLA" || FILTRO_TIPO === "FLORAL" || FILTRO_TIPO === "SPORT")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.descripcion === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);

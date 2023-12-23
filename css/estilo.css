@@ -117,10 +117,6 @@ h5 {
   align-items: center;
   margin: 0px 30px 30px 30px;
 }
-.filtros .filtros__nav .titulo {
-  color: #342E3C;
-  text-align: center;
-}
 .filtros .filtros__nav #tituloPrincipal {
   color: #342E3C;
   text-align: center;
@@ -144,17 +140,17 @@ h5 {
   color: #342E3C;
 }
 .filtros .filtros__nav .nav-btn .navbar .container-fluid #botonBusqueda {
+  background-color: #342E3C;
+  color: #8ED3C4;
+  border: 1px solid #342E3C;
+}
+.filtros .filtros__nav .nav-btn .navbar .container-fluid #botonBusqueda:hover {
   background-color: #454B5F;
   color: #8ED3C4;
   border: 1px solid #454B5F;
 }
-.filtros .filtros__nav .nav-btn .navbar .container-fluid #botonBusqueda:hover {
-  background-color: #5B8D9F;
-  color: #342E3C;
-  border: 1px solid #342E3C;
-}
 .filtros .filtros__nav .navbar-toggler {
-  background-color: #454B5F;
+  background-color: #342E3C;
 }
 .filtros .filtros__nav .navbar-nav {
   position: absolute;
@@ -243,8 +239,8 @@ h5 {
 
 #btn {
   font-size: 16px;
-  background-color: #454B5F;
-  border: 1px solid #454B5F;
+  background-color: #342E3C;
+  border: 1px solid #342E3C;
   color: #8ED3C4;
   height: 40px;
   width: 90px;
@@ -253,9 +249,9 @@ h5 {
   margin-bottom: 10px;
 }
 #btn:hover {
-  background-color: #5B8D9F;
-  color: #342E3C;
-  border: 1px solid #342E3C;
+  background-color: #454B5F;
+  color: #8ED3C4;
+  border: 1px solid #454B5F;
 }
 
 /* Footer */
@@ -325,7 +321,7 @@ h5 {
   align-items: center;
   background-color: #342E3C;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   margin-top: 111px;
   width: 360px;
   right: 0;

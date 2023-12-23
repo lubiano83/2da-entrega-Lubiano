@@ -11,11 +11,6 @@
         align-items: center;
         margin: 0px 30px 30px 30px;
 
-        .titulo {
-            color: map-get($colores, color-1);
-            text-align: center;
-        }
-
         #tituloPrincipal {
             color: map-get($colores, color-1);
             text-align: center;
@@ -40,14 +35,14 @@
                     }
     
                     #botonBusqueda {
-                        background-color: map-get($colores, color-2);
+                        background-color: map-get($colores, color-1);
                         color: map-get($colores, color-6);
-                        border: 1px solid map-get($colores, color-2);
+                        border: 1px solid map-get($colores, color-1);
     
                         &:hover {
-                            background-color: map-get($colores, color-4);
-                            color: map-get($colores, color-1);
-                            border: 1px solid map-get($colores, color-1);
+                            background-color: map-get($colores, color-2);
+                            color: map-get($colores, color-6);
+                            border: 1px solid map-get($colores, color-2);
                         }
                     }
                 }
@@ -55,7 +50,7 @@
         }
 
         .navbar-toggler {
-            background-color: map-get($colores, color-2);
+            background-color: map-get($colores, color-1);
         }
 
         .navbar-nav {
