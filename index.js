@@ -24,9 +24,9 @@ const PROD7 = new Producto("22212-7", "./img/shell 5w30 hx8.webp","ACEITES", "SH
 const PROD8 = new Producto("22135-K", "./img/shell 15w40 hx5.webp","ACEITES", "SHELL", "HX5", "15W-40", "4L", 29690);
 const PROD9 = new Producto("22013-2", "./img/10w-40 petroleo shell.jpeg","ACEITES", "SHELL", "R5", "10W-40", "4L", 35990);
 // Filtros
-const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg","FILTROS", "MANN", "C", "30171", "AIRE", 9900);
-const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg","FILTROS", "MANN", "HU", "718/5X", "ELEMENTO", 9700);
-const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg","FILTROS", "MANN", "W", "610/6", "ACEITE", 6280);
+const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg","FILTROS", "MANN", "C30171", "30171", "AIRE", 9900);
+const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg","FILTROS", "MANN", "HU718/5X", "718/5X", "ELEMENTO", 9700);
+const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg","FILTROS", "MANN", "W610/6", "610/6", "ACEITE", 6280);
 // Aromatizantes
 const PROD13 = new Producto("42088-3", "./img/paloma parfum.png","AROMATIZANTES", "PALOMA", "PARFUM", "", "VAINILLA", 1800);
 const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png","AROMATIZANTES", "PALOMA", "WOODY", "", "FLORAL", 2400);
@@ -140,13 +140,13 @@ BTN.addEventListener("click", function() {
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
 
-    } else if (FILTRO_TIPO && (FILTRO_TIPO === "K715" || FILTRO_TIPO === "H724" || FILTRO_TIPO === "H308" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "HX8" || FILTRO_TIPO === "HX5" || FILTRO_TIPO === "R5" || FILTRO_TIPO === "C" || FILTRO_TIPO === "HU" || FILTRO_TIPO === "W" || FILTRO_TIPO === "PARFUM" || FILTRO_TIPO === "HAPPY BAG" || FILTRO_TIPO === "WOODY")) {
+    } else if (FILTRO_TIPO && (FILTRO_TIPO === "K715" || FILTRO_TIPO === "H724" || FILTRO_TIPO === "H308" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "MF" || FILTRO_TIPO === "HX8" || FILTRO_TIPO === "HX5" || FILTRO_TIPO === "R5" || FILTRO_TIPO === "C30171" || FILTRO_TIPO === "HU718/5X" || FILTRO_TIPO === "W610/6" || FILTRO_TIPO === "PARFUM" || FILTRO_TIPO === "HAPPY BAG" || FILTRO_TIPO === "WOODY")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.modelo === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
     
-    } else if (FILTRO_TIPO && (FILTRO_TIPO === "155/65R13" || FILTRO_TIPO === "185/65R14" || FILTRO_TIPO === "175/60R15" || FILTRO_TIPO === "54321" || FILTRO_TIPO === "55457" || FILTRO_TIPO === "47600" || FILTRO_TIPO === "5W-30" || FILTRO_TIPO === "15W-40" || FILTRO_TIPO === "10W-40" || FILTRO_TIPO === "30171" || FILTRO_TIPO === "718/5X" || FILTRO_TIPO === "610/6" || FILTRO_TIPO === "" || FILTRO_TIPO === "" || FILTRO_TIPO === "")) {
+    } else if (FILTRO_TIPO && (FILTRO_TIPO === "155/65R13" || FILTRO_TIPO === "185/65R14" || FILTRO_TIPO === "175/60R15" || FILTRO_TIPO === "54321" || FILTRO_TIPO === "55457" || FILTRO_TIPO === "47600" || FILTRO_TIPO === "5W-30" || FILTRO_TIPO === "15W-40" || FILTRO_TIPO === "10W-40" || FILTRO_TIPO === "30171" || FILTRO_TIPO === "718/5X" || FILTRO_TIPO === "610/6" || FILTRO_TIPO === "FRAGANCIAS" || FILTRO_TIPO === "FRAGANCIAS" || FILTRO_TIPO === "FRAGANCIAS")) {
         
         const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.medida === FILTRO_TIPO);
         cargarProductos(PRODUCTOS_FILTRADOS);
@@ -158,7 +158,7 @@ BTN.addEventListener("click", function() {
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(FILTRO_TIPO);
     
-    } else {
+    }  else {
 
         alert("Por favor, ingresa una categoria válida (Baterias, Neumaticos, Filtros, Aceites u otra existente).");
         TITULO_PRINCIPAL.innerText = "Todos los Productos";
