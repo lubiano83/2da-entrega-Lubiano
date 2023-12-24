@@ -35,10 +35,10 @@ const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png","AROMATIZANT
 // Contenedor Productos
 const PRODUCTOS_CONTENEDOR = document.getElementById("productosContenedor");
 const ARRAY_PRODUCTOS = [PROD1, PROD2, PROD3, PROD4, PROD5, PROD6, PROD7, PROD8, PROD9, PROD10, PROD11, PROD12, PROD13, PROD14, PROD15];
-// Filtros
+// Filtros Nav
 const BOTON_NAV = document.querySelectorAll(".nav-link");
 const TITULO_PRINCIPAL = document.getElementById("tituloPrincipal");
-// Botones
+// Boton Filtrar
 const BTN = document.getElementById("btn"); // document. es un objeto y getElementById es un metodo.
 // Carrito
 const TOGGLE_CARRITO = document.getElementById('toggleCarrito');
@@ -75,8 +75,8 @@ function cargarProductos (productosElegidos){
             <div class="box__texto">
                 <h4>Marca: ${contenedor__box.marca}</h4>
                 <h4>Modelo: ${contenedor__box.modelo}</h4>
-                <h4>Medida: ${contenedor__box.medida || "Indefinido"}</h4>
-                <h4>Otro: ${contenedor__box.otro || "Indefinido"}</h4>
+                <h4>Medida: ${contenedor__box.medida || "Undefined"}</h4>
+                <h4>Otro: ${contenedor__box.otro || "Undefined"}</h4>
                 <h4>Precio: $${formatearPrecio(contenedor__box.precio)}</h4>
                 <button class="agregar" id="${contenedor__box.codigo}">Agregar</button>
             </div>
