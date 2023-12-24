@@ -185,9 +185,9 @@ BOTON_BUSQUEDA.addEventListener('click', function(e) {
         const MARCA_NORMALIZED = removerAcentos(contenedor__box.marca);
         const MODELO_NORMALIZED = removerAcentos(contenedor__box.modelo);
         const MEDIDA_NORMALIZED = removerAcentos(contenedor__box.medida);
-        const DESCRIPCION_NORMALIZED = removerAcentos(contenedor__box.descripcion);
+        const OTRO_NORMALIZED = removerAcentos(contenedor__box.otro);
 
-        return (TIPO_NORMALIZED.includes(TEXTO_BUSQUEDA) || MARCA_NORMALIZED.includes(TEXTO_BUSQUEDA) || MODELO_NORMALIZED.includes(TEXTO_BUSQUEDA) || MEDIDA_NORMALIZED.includes(TEXTO_BUSQUEDA) || DESCRIPCION_NORMALIZED.includes(TEXTO_BUSQUEDA));
+        return (TIPO_NORMALIZED.includes(TEXTO_BUSQUEDA) || MARCA_NORMALIZED.includes(TEXTO_BUSQUEDA) || MODELO_NORMALIZED.includes(TEXTO_BUSQUEDA) || MEDIDA_NORMALIZED.includes(TEXTO_BUSQUEDA) || OTRO_NORMALIZED.includes(TEXTO_BUSQUEDA));
     });
 
     if (PRODUCTOS_FILTRADOS.length > 0) {
