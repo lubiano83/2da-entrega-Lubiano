@@ -48,15 +48,15 @@ const BOTON_BUSQUEDA = document.getElementById("botonBusqueda");
 
 // Para que el precio se vea con un punto
 function formatearPrecio(precio) {
-    const precioString = precio.toString(); // Convertir el precio a string
-    const longitud = precioString.length;
+    const PRECIO_STRING = precio.toString(); // Convertir el precio a string
+    const LONGITUD = PRECIO_STRING.length;
 
-    if (longitud <= 3) {
-        return precioString; // Si el precio tiene 3 o menos dígitos, devuelve el precio sin modificar
+    if (LONGITUD <= 3) {
+        return PRECIO_STRING; // Si el precio tiene 3 o menos dígitos, devuelve el precio sin modificar
     } else {
-        const parteEntera = precioString.slice(0, longitud - 3); // Obtener la parte entera del precio
-        const parteDecimal = precioString.slice(longitud - 3); // Obtener los últimos 3 dígitos como parte decimal
-        return `${parteEntera}.${parteDecimal}`; // Devolver el precio formateado con un punto después de los primeros 3 dígitos
+        const PARTE_ENTERA = PRECIO_STRING.slice(0, LONGITUD - 3); // Obtener la parte entera del precio
+        const PARTE_DECIMAL = PRECIO_STRING.slice(LONGITUD - 3); // Obtener los últimos 3 dígitos como parte decimal
+        return `${PARTE_ENTERA}.${PARTE_DECIMAL}`; // Devolver el precio formateado con un punto después de los primeros 3 dígitos
     }
 }
 
