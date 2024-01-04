@@ -76,11 +76,16 @@ h5 {
   color: #5B8D9F;
 }
 .header .header__contenedor .contenedor__carrito {
-  margin: 30px;
+  margin: 30px 30px 30px 30px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+}
+.header .header__contenedor .contenedor__carrito #numerito {
+  color: #8ED3C4;
+  position: absolute;
+  bottom: 29px;
 }
 .header .header__contenedor .contenedor__carrito .svg {
   height: 50px;
@@ -129,9 +134,7 @@ h5 {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-}
-.filtros .filtros__nav .nav-btn .navbar {
-  margin: 10px;
+  gap: 10px;
 }
 .filtros .filtros__nav .nav-btn .navbar .container-fluid {
   padding: 0;
@@ -139,31 +142,19 @@ h5 {
 .filtros .filtros__nav .nav-btn .navbar .container-fluid .form-control {
   color: #342E3C;
 }
-.filtros .filtros__nav .nav-btn .navbar .container-fluid #botonBusqueda {
+.filtros .filtros__nav .nav-btn .dropdown {
+  background-color: transparent;
+}
+.filtros .filtros__nav .nav-btn .dropdown .btn {
   background-color: #342E3C;
   color: #8ED3C4;
-  border: 1px solid #342E3C;
+  text-transform: uppercase;
 }
-.filtros .filtros__nav .nav-btn .navbar .container-fluid #botonBusqueda:hover {
-  background-color: #454B5F;
-  color: #8ED3C4;
-  border: 1px solid #454B5F;
-}
-.filtros .filtros__nav .navbar-toggler {
+.filtros .filtros__nav .nav-btn .dropdown .dropdown-menu {
   background-color: #342E3C;
 }
-.filtros .filtros__nav .navbar-nav {
-  position: absolute;
-  z-index: 2;
-  text-align: center;
-  background-color: #342E3C;
-  padding: 0;
-  margin-left: -48px;
-}
-.filtros .filtros__nav .navbar-nav .nav-link {
+.filtros .filtros__nav .nav-btn .dropdown .dropdown-menu .dropdown-item {
   color: #8ED3C4;
-  padding: 10px 0px 10px 0px;
-  width: 150px;
   text-transform: uppercase;
 }
 
@@ -386,6 +377,9 @@ h5 {
 /* Mixins Mobile */
 /* 360px & 591px */
 @media screen and (min-width: 360px) and (max-width: 591px) {
+  .header .header__contenedor .contenedor__carrito #numerito {
+    bottom: 20px;
+  }
   .carousel {
     top: 178px;
   }
@@ -416,6 +410,9 @@ h5 {
 }
 /* 592px & 701px */
 @media screen and (min-width: 592px) and (max-width: 701px) {
+  .header .header__contenedor .contenedor__carrito #numerito {
+    bottom: 20px;
+  }
   .carousel {
     top: 178px;
   }

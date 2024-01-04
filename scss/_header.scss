@@ -42,12 +42,16 @@
         }
 
         .contenedor__carrito {
-            margin: 30px;
+            margin: 30px 30px 30px 30px;
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
-
+            #numerito {
+                color: map-get($colores, color-6);
+                position: absolute;
+                bottom: 29px;
+            }
             .svg {
                 height: 50px;
                 width: 50px;
