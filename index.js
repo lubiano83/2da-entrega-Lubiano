@@ -36,7 +36,7 @@ const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png","AROMATIZANT
 
 // Contenedor Productos
 const PRODUCTOS_CONTENEDOR = document.getElementById("productosContenedor");
-const ARRAY_PRODUCTOS = [PROD1, PROD2, PROD3, PROD4, PROD5, PROD6, PROD7, PROD8, PROD9, PROD10, PROD11, PROD12, PROD13, PROD14, PROD15];
+const PRODUCTOS = [PROD1, PROD2, PROD3, PROD4, PROD5, PROD6, PROD7, PROD8, PROD9, PROD10, PROD11, PROD12, PROD13, PROD14, PROD15];
 // Filtros Nav
 const BOTON_NAV = document.querySelectorAll(".dropdown-item");
 const TITULO_PRINCIPAL = document.getElementById("tituloPrincipal");
@@ -70,7 +70,7 @@ function cargarProductos (productosElegidos){
         `;
         PRODUCTOS_CONTENEDOR.append(ARTICLE);
     }); actualizarBotonesAgregar()
-} cargarProductos(ARRAY_PRODUCTOS);
+} cargarProductos(PRODUCTOS);
 
 // Para que el precio se vea con un punto
 function formatearPrecio(precio) {
@@ -92,14 +92,14 @@ function capitalizarPrimeraLetra(texto) {
 BOTON_NAV.forEach(boton => {
     boton.addEventListener("click", (e) => {
         if (e.currentTarget.id !== "TODOS") {
-            const PRODUCTO_CATEGORIA = ARRAY_PRODUCTOS.find(contenedor__box => contenedor__box.tipo === e.currentTarget.id);
+            const PRODUCTO_CATEGORIA = PRODUCTOS.find(contenedor__box => contenedor__box.tipo === e.currentTarget.id);
             TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(PRODUCTO_CATEGORIA.tipo);
     
-            const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => contenedor__box.tipo === e.currentTarget.id);
+            const PRODUCTOS_FILTRADOS = PRODUCTOS.filter(contenedor__box => contenedor__box.tipo === e.currentTarget.id);
             cargarProductos(PRODUCTOS_FILTRADOS);
         } else {
             TITULO_PRINCIPAL.innerText = "Todos los Productos";
-            cargarProductos(ARRAY_PRODUCTOS);
+            cargarProductos(PRODUCTOS);
         }
     })
 })
@@ -112,7 +112,7 @@ const BARRA_BUSQUEDA = document.getElementById("barraBusqueda");
 BARRA_BUSQUEDA.addEventListener('input', function() {
     const TEXTO_BUSQUEDA = removerAcentos(BARRA_BUSQUEDA.value.trim()).toLowerCase();
 
-    const PRODUCTOS_FILTRADOS = ARRAY_PRODUCTOS.filter(contenedor__box => {
+    const PRODUCTOS_FILTRADOS = PRODUCTOS.filter(contenedor__box => {
         const TIPO_NORMALIZED = removerAcentos(contenedor__box.tipo);
         const MARCA_NORMALIZED = removerAcentos(contenedor__box.marca);
         const MODELO_NORMALIZED = removerAcentos(contenedor__box.modelo);
@@ -128,7 +128,7 @@ BARRA_BUSQUEDA.addEventListener('input', function() {
     } else {
         alert("No se encontraron resultados para esa búsqueda.");
         TITULO_PRINCIPAL.innerText = "Todos los Productos";
-        cargarProductos(ARRAY_PRODUCTOS);
+        cargarProductos(PRODUCTOS);
     }
 });
 
@@ -148,7 +148,7 @@ function actualizarBotonesAgregar() {
  // Agregar al Carrito
 function agregarAlCarrito(e) {
     const CODIGO_BOTON = e.currentTarget.id;
-    const PRODUCTO_AGREGADO = ARRAY_PRODUCTOS.find(producto => producto.codigo === CODIGO_BOTON);
+    const PRODUCTO_AGREGADO = PRODUCTOS.find(producto => producto.codigo === CODIGO_BOTON);
 
     if(PRODUCTOS_EN_CARRITO.some(producto => producto.codigo === CODIGO_BOTON)){
         const INDEX = PRODUCTOS_EN_CARRITO.findIndex(producto => producto.codigo === CODIGO_BOTON);
