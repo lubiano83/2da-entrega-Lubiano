@@ -16,7 +16,12 @@
     right: 0;
     top: 0;
     border-left: 1px solid map-get($colores, color-6);
-    .carrito__contenedor {
+    #carritoVacio {
+        display: none;
+        color: map-get($colores, color-6);
+        margin: 30px;
+    }
+    #carritoContenedor {
         margin-top: 30px;
         overflow-y: scroll;
         height: calc(100vh - 291px);
@@ -27,11 +32,13 @@
             align-items: center;
             margin: 0px 30px 30px 30px;
             border-radius: 15px;
-            border: 1px solid map-get($colores, color-6);
+            border: 1px solid map-get($colores, color-1);
             overflow: hidden;
+            border: 2px solid map-get($colores, color-6);
             .box__foto {
                 width: 300px;
                 aspect-ratio: 1/1;
+                background-color: white;
     
                 .foto {
                     width: 100%;
@@ -39,27 +46,30 @@
             }
     
             .box__texto {
+                position: relative;
                 color: map-get($colores, color-6);
                 margin: 20px 0px 20px 10px;
+                background-color: map-get($colores, color-1);
+                padding: 10px;
             }
     
             .box__eliminar {
-                .svg {
-                    position: relative;
-                    right: -150;
-                    height: 50px;
-                    width: 50px;
-                    color: map-get($colores, color-6);
-                    margin-right: 20px;
-                    &:hover {
-                        scale: 1.2;
-                        color: map-get($colores, color-4);
-                    }
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .botonEliminar {
+                    margin: -20px 0px 20px 0px;
                 }
             }
         }
+        #carritoComprado {
+            display: none;
+            color: map-get($colores, color-6);
+            margin: 30px;
+        }
     }
-    .contenedor__total {
+    .carrito__total {
         display: flex;
         flex-flow: column wrap;
         justify-content: center;

@@ -16,9 +16,6 @@
             background-color: map-get($colores, color-1);
             color: map-get($colores, color-6);
             box-shadow: 5px 5px 5px map-get($colores, color-1);
-            &:hover {
-                scale: 1.05;
-            }
             .box__foto {
                 
                 .foto {
