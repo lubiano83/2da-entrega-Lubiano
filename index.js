@@ -48,7 +48,6 @@ const CARRITO = document.querySelector('.carrito');
 const NUMERITO = document.querySelector("#numerito");
 // Carrito de Compras
 const PRODUCTOS_EN_CARRITO = [];
-const CARRITO_TOTAL = document.getElementById("carritoTotal");
 
 // Cargar Productos
 function cargarProductos(productosElegidos) {
@@ -159,6 +158,7 @@ function agregarAlCarrito(e) {
     cargarCarrito(PRODUCTOS_EN_CARRITO);
     actualizarNumerito();
     localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO)); // almacenar el carrito en local storage
+    document.dispatchEvent(new Event('productoModificado'));
 }; 
 document.addEventListener('DOMContentLoaded', () => { // para que no se vacie el carro cuando se refresca y se agrega un nuevo producto
     let productosGuardados = JSON.parse(localStorage.getItem("PRODUCTOS_EN_CARRITO")) || [];
@@ -227,30 +227,66 @@ document.addEventListener('click', function(e) {
         actualizarNumerito();
         localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO));
     }
+    document.dispatchEvent(new Event('productoModificado'));
 });
 
-// Suponiendo que PRODUCTOS_EN_CARRITO es un array de objetos con propiedades precio y cantidad
-function calcularTotalCarrito() {
-    let total = 0;
-
-    // Recorre cada producto en el carrito
-    for (let i = 0; i < PRODUCTOS_EN_CARRITO.length; i++) {
-        const producto = PRODUCTOS_EN_CARRITO[i];
-        total += producto.precio * producto.cantidad; // Multiplica precio por cantidad y suma al total
+// Sacando precio total carrito
+document.addEventListener('DOMContentLoaded', function() {
+    function formatearPrecio(precio) {
+        return precio.toString().split('').reverse().map((d, i) => i > 0 && i % 3 === 0 ? d + '.' : d).reverse().join('');
     }
 
-    return total;
+    function calcularTotalCarrito() {
+        let total = 0;
+        for (let i = 0; i < PRODUCTOS_EN_CARRITO.length; i++) {
+            const producto = PRODUCTOS_EN_CARRITO[i];
+            total += producto.precio * producto.cantidad;
+        }
+        return total;
+    }
+
+    function mostrarTotalCarritoEnHTML() {
+        const totalCarrito = calcularTotalCarrito();
+        const precioFormateado = formatearPrecio(totalCarrito);
+        const elementoCarritoTotal = document.getElementById('carritoTotal');
+        elementoCarritoTotal.innerText = `Total: $${precioFormateado}`;
+    }; mostrarTotalCarritoEnHTML();
+});
+
+// Precio total en el carrito de compras
+document.addEventListener('DOMContentLoaded', function() {
+    function formatearPrecio(precio) {
+        return precio.toString().split('').reverse().map((d, i) => i > 0 && i % 3 === 0 ? d + '.' : d).reverse().join('');
+    }
+
+    function calcularTotalCarrito() {
+        let total = 0;
+        for (let i = 0; i < PRODUCTOS_EN_CARRITO.length; i++) {
+            const producto = PRODUCTOS_EN_CARRITO[i];
+            total += producto.precio * producto.cantidad;
+        }
+        return total;
+    }
+
+    function mostrarTotalCarritoEnHTML() {
+        const totalCarrito = calcularTotalCarrito();
+        const precioFormateado = formatearPrecio(totalCarrito);
+        const elementoCarritoTotal = document.getElementById('carritoTotal');
+        elementoCarritoTotal.innerText = `Total: $${precioFormateado}`;
+    }
+
+    document.addEventListener('productoModificado', mostrarTotalCarritoEnHTML);
+    mostrarTotalCarritoEnHTML(); // Muestra el precio total del carrito al cargar la página inicialmente
+});
+
+// Boton pagar
+function verificarProductosEnCarrito() {
+    if (PRODUCTOS_EN_CARRITO.length > 0) {
+        alert("Muchas Gracias por tu Compra!!");
+    }
 }
-
-function mostrarTotalCarritoEnHTML() {
-    const totalCarrito = calcularTotalCarrito();
-    const elementoCarritoTotal = document.getElementById('carritoTotal');
-    elementoCarritoTotal.innerText = `Total del carrito: $${totalCarrito.toFixed(2)}`; // Muestra el total en el elemento HTML
-}
-
-// Llamar a la función para mostrar el total del carrito
-mostrarTotalCarritoEnHTML();
-
+const PAGAR_CARRITO = document.getElementById("pagarCarrito");
+PAGAR_CARRITO.onclick = verificarProductosEnCarrito;
 
 
 
