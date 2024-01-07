@@ -229,6 +229,28 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// Suponiendo que PRODUCTOS_EN_CARRITO es un array de objetos con propiedades precio y cantidad
+function calcularTotalCarrito() {
+    let total = 0;
+
+    // Recorre cada producto en el carrito
+    for (let i = 0; i < PRODUCTOS_EN_CARRITO.length; i++) {
+        const producto = PRODUCTOS_EN_CARRITO[i];
+        total += producto.precio * producto.cantidad; // Multiplica precio por cantidad y suma al total
+    }
+
+    return total;
+}
+
+function mostrarTotalCarritoEnHTML() {
+    const totalCarrito = calcularTotalCarrito();
+    const elementoCarritoTotal = document.getElementById('carritoTotal');
+    elementoCarritoTotal.innerText = `Total del carrito: $${totalCarrito.toFixed(2)}`; // Muestra el total en el elemento HTML
+}
+
+// Llamar a la función para mostrar el total del carrito
+mostrarTotalCarritoEnHTML();
+
 
 
 
