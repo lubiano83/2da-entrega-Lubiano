@@ -189,14 +189,12 @@ function cargarCarrito(productosElegidos) {
         ARTICLE.className = "contenedor__box";
         ARTICLE.innerHTML = `
             <div class="box__foto">
-                <img src="${contenedor__box.imagen}" alt="autoshop, ${contenedor__box.tipo}, ${contenedor__box.marca}, ${contenedor__box.modelo}, ${contenedor__box.medida}, ${contenedor__box.otro}" class="foto">
+                <img src="${contenedor__box.imagen}" alt="autoshop, ${contenedor__box.tipo}, ${contenedor__box.marca}, ${contenedor__box.modelo}, ${contenedor__box.otro1}, ${contenedor__box.otro2}" class="foto">
             </div>
             <div class="box__texto">
-                <h4>Descripción: ${contenedor__box.marca} ${contenedor__box.modelo} ${contenedor__box.medida} ${contenedor__box.otro}</h4>
+                <h4>Descripción: ${contenedor__box.marca} ${contenedor__box.modelo} ${contenedor__box.otro1} ${contenedor__box.otro2}</h4>
                 <h4>Precio: $${formatearPrecio(contenedor__box.precio)}</h4>
                 <h4>Cantidad: ${contenedor__box.cantidad}</h4>
-            </div>
-            <div class="box__eliminar">
                 <button class="eliminar" id="${contenedor__box.codigo}">Eliminar</button>
             </div>
         `;
@@ -230,29 +228,6 @@ document.addEventListener('click', function(e) {
     document.dispatchEvent(new Event('productoModificado'));
 });
 
-// Sacando precio total carrito
-document.addEventListener('DOMContentLoaded', function() {
-    function formatearPrecio(precio) {
-        return precio.toString().split('').reverse().map((d, i) => i > 0 && i % 3 === 0 ? d + '.' : d).reverse().join('');
-    }
-
-    function calcularTotalCarrito() {
-        let total = 0;
-        for (let i = 0; i < PRODUCTOS_EN_CARRITO.length; i++) {
-            const producto = PRODUCTOS_EN_CARRITO[i];
-            total += producto.precio * producto.cantidad;
-        }
-        return total;
-    }
-
-    function mostrarTotalCarritoEnHTML() {
-        const totalCarrito = calcularTotalCarrito();
-        const precioFormateado = formatearPrecio(totalCarrito);
-        const elementoCarritoTotal = document.getElementById('carritoTotal');
-        elementoCarritoTotal.innerText = `Total: $${precioFormateado}`;
-    }; mostrarTotalCarritoEnHTML();
-});
-
 // Precio total en el carrito de compras
 document.addEventListener('DOMContentLoaded', function() {
     function formatearPrecio(precio) {
@@ -262,17 +237,17 @@ document.addEventListener('DOMContentLoaded', function() {
     function calcularTotalCarrito() {
         let total = 0;
         for (let i = 0; i < PRODUCTOS_EN_CARRITO.length; i++) {
-            const producto = PRODUCTOS_EN_CARRITO[i];
-            total += producto.precio * producto.cantidad;
+            const PRODUCTO = PRODUCTOS_EN_CARRITO[i];
+            total += PRODUCTO.precio * PRODUCTO.cantidad;
         }
         return total;
     }
 
     function mostrarTotalCarritoEnHTML() {
-        const totalCarrito = calcularTotalCarrito();
-        const precioFormateado = formatearPrecio(totalCarrito);
-        const elementoCarritoTotal = document.getElementById('carritoTotal');
-        elementoCarritoTotal.innerText = `Total: $${precioFormateado}`;
+        const TOTAL_CARRITO = calcularTotalCarrito();
+        const PRECIO_FORMATEADO = formatearPrecio(TOTAL_CARRITO);
+        const ELEMENTO_CARRITO_TOTAL = document.getElementById('carritoTotal');
+        ELEMENTO_CARRITO_TOTAL.innerText = `Total: $${PRECIO_FORMATEADO}`;
     }
 
     document.addEventListener('productoModificado', mostrarTotalCarritoEnHTML);

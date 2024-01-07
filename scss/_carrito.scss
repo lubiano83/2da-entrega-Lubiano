@@ -3,6 +3,7 @@
 .mostrar-carrito {
     display: none !important;
 }
+
 .carrito {
     display: flex;
     flex-flow: column wrap;
@@ -16,15 +17,18 @@
     right: 0;
     top: 0;
     border-left: 1px solid map-get($colores, color-6);
+
     #carritoVacio {
         display: none;
         color: map-get($colores, color-6);
         margin: 30px;
     }
+
     #carritoContenedor {
         margin-top: 30px;
         overflow-y: scroll;
-        height: calc(100vh - 291px);
+        height: calc(100vh - 280px);
+
         .contenedor__box {
             display: flex;
             flex-flow: row wrap;
@@ -35,50 +39,44 @@
             border: 1px solid map-get($colores, color-1);
             overflow: hidden;
             border: 2px solid map-get($colores, color-6);
+
             .box__foto {
                 width: 300px;
                 aspect-ratio: 1/1;
                 background-color: white;
-    
+
                 .foto {
                     width: 100%;
                 }
             }
-    
+
             .box__texto {
                 position: relative;
                 color: map-get($colores, color-6);
-                margin: 20px 0px 20px 10px;
+                margin: 20px 10px 20px 10px;
                 background-color: map-get($colores, color-1);
                 padding: 10px;
-            }
-    
-            .box__eliminar {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 .eliminar {
-                    margin: -20px 0px 20px 0px;
+                position: relative;
+                margin: 10px 20px 0px 20px;
+                right: -70px;
                 }
             }
         }
-        #carritoComprado {
-            display: none;
-            color: map-get($colores, color-6);
-            margin: 30px;
-        }
     }
+
     .carrito__total {
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
         margin: 30px;
+
         .total {
             color: map-get($colores, color-6);
             text-align: center;
         }
+
         .pagar {
             display: flex;
             justify-content: center;

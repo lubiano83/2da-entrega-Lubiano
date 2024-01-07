@@ -200,7 +200,6 @@ h5 {
   width: 90px;
   text-align: center;
   border-radius: 10px;
-  margin-top: 10px;
 }
 .enviar:hover, .reset:hover {
   background-color: #5B8D9F;
@@ -217,7 +216,6 @@ h5 {
   width: 90px;
   text-align: center;
   border-radius: 10px;
-  margin-top: 10px;
 }
 .pagar:hover, .agregar:hover, .eliminar:hover {
   background-color: #5B8D9F;
@@ -254,6 +252,9 @@ h5 {
 }
 .footer .footer__contenedor .contenedor__formulario .textarea {
   height: 125px;
+}
+.footer .footer__contenedor .contenedor__formulario .reset, .footer .footer__contenedor .contenedor__formulario .enviar {
+  margin-top: 10px;
 }
 .footer .footer__contenedor .contenedor__logo .logo {
   margin: 0px 30px 30px 30px;
@@ -308,7 +309,7 @@ h5 {
 .carrito #carritoContenedor {
   margin-top: 30px;
   overflow-y: scroll;
-  height: calc(100vh - 291px);
+  height: calc(100vh - 280px);
 }
 .carrito #carritoContenedor .contenedor__box {
   display: flex;
@@ -332,23 +333,14 @@ h5 {
 .carrito #carritoContenedor .contenedor__box .box__texto {
   position: relative;
   color: #8ED3C4;
-  margin: 20px 0px 20px 10px;
+  margin: 20px 10px 20px 10px;
   background-color: #342E3C;
   padding: 10px;
 }
-.carrito #carritoContenedor .contenedor__box .box__eliminar {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carrito #carritoContenedor .contenedor__box .box__eliminar .eliminar {
-  margin: -20px 0px 20px 0px;
-}
-.carrito #carritoContenedor #carritoComprado {
-  display: none;
-  color: #8ED3C4;
-  margin: 30px;
+.carrito #carritoContenedor .contenedor__box .box__texto .eliminar {
+  position: relative;
+  margin: 10px 20px 0px 20px;
+  right: -70px;
 }
 .carrito .carrito__total {
   display: flex;
