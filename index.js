@@ -26,13 +26,13 @@ const PROD7 = new Producto("22212-7", "./img/shell 5w30 hx8.webp", "ACEITES", "S
 const PROD8 = new Producto("22135-K", "./img/shell 15w40 hx5.webp", "ACEITES", "SHELL", "HX5", "15W-40", "BENCINERO", "6", 29690);
 const PROD9 = new Producto("22013-2", "./img/10w-40 petroleo shell.jpeg", "ACEITES", "SHELL", "R5", "10W-40", "PETROLERO", "3", 35990);
 // Filtros
-const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg", "FILTROS", "MANN", "C30171", "", "FILTRO AIRE", "2", 9900);
-const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg", "FILTROS", "MANN", "HU718/5X", "", "FILTRO ELEMENTO", "2", 9700);
-const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg", "FILTROS", "MANN", "W610/6", "", "FILTRO ACEITE", "2", 6280);
+const PROD10 = new Producto("25508-4", "./img/man c30171.jpeg", "FILTROS", "MANN", "C30171", "AIRE", "", "2", 9900);
+const PROD11 = new Producto("25479-7", "./img/mann hu 718:5X.jpeg", "FILTROS", "MANN", "HU718/5X", "ELEMENTO", "", "2", 9700);
+const PROD12 = new Producto("26007-K", "./img/mann w610:6.jpeg", "FILTROS", "MANN", "W610/6", "ACEITE", "", "2", 6280);
 // Aromatizantes
-const PROD13 = new Producto("42088-3", "./img/paloma parfum.png", "AROMATIZANTES", "PALOMA", "PARFUM", "", "VAINILLA", "20", 1800);
-const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png", "AROMATIZANTES", "PALOMA", "WOODY", "", "FLORAL", "2", 2400);
-const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png", "AROMATIZANTES", "PALOMA", "HAPPY BAG", "", "SPORT", "10", 1890);
+const PROD13 = new Producto("42088-3", "./img/paloma parfum.png", "AROMATIZANTES", "PALOMA", "PARFUM", "VAINILLA", "", "20", 1800);
+const PROD14 = new Producto("42055-7", "./img/paloma aqua balls.png", "AROMATIZANTES", "PALOMA", "WOODY", "FLORAL", "", "2", 2400);
+const PROD15 = new Producto("42120-0", "./img/paloma happy bag.png", "AROMATIZANTES", "PALOMA", "HAPPY BAG", "SPORT", "", "10", 1890);
 
 // Contenedor Productos
 const PRODUCTOS_CONTENEDOR = document.getElementById("productosContenedor");
@@ -159,7 +159,7 @@ function agregarAlCarrito(e) {
     cargarCarrito(PRODUCTOS_EN_CARRITO);
     actualizarNumerito();
     localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO)); // almacenar el carrito en local storage
-};
+}; 
 document.addEventListener('DOMContentLoaded', () => { // para que no se vacie el carro cuando se refresca y se agrega un nuevo producto
     let productosGuardados = JSON.parse(localStorage.getItem("PRODUCTOS_EN_CARRITO")) || [];
     PRODUCTOS_EN_CARRITO.push(...productosGuardados);
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => { // para que no se vacie el
         NUMERITO.innerText = nuevoNumeritoGuardado;
     }
 });
-
+// cargar productos al carrito
 function cargarCarrito(productosElegidos) {
     const CARRITO_CONTENEDOR = document.getElementById("carritoContenedor");
 
@@ -197,7 +197,7 @@ function cargarCarrito(productosElegidos) {
                 <h4>Cantidad: ${contenedor__box.cantidad}</h4>
             </div>
             <div class="box__eliminar">
-                <button class="botonEliminar" id="${contenedor__box.codigo}">Eliminar</button>
+                <button class="eliminar" id="${contenedor__box.codigo}">Eliminar</button>
             </div>
         `;
         CARRITO_CONTENEDOR.appendChild(ARTICLE); // Agregar el elemento ARTICLE al contenedor
@@ -206,28 +206,28 @@ function cargarCarrito(productosElegidos) {
 const PRODUCTOS_GUARDADOS = JSON.parse(localStorage.getItem("PRODUCTOS_EN_CARRITO")) || []; // Llamar a cargarCarrito con los productos guardados en localStorage al iniciar
 cargarCarrito(PRODUCTOS_GUARDADOS);
 
-// Boton Eliminar dle Carrito
-function eliminarDelCarrito(e) {
-    const BOTON_ELIMINAR = e.currentTarget.codigo;
-    
-    // Encuentra el índice del producto en el carrito
-    const INDEX = PRODUCTOS_EN_CARRITO.findIndex(contenedor__box => contenedor__box.codigo === BOTON_ELIMINAR);
-    
-    if (INDEX !== -1) {
-        // Reduce la cantidad o elimina el producto del carrito según corresponda
-        if (PRODUCTOS_EN_CARRITO[INDEX].cantidad > 1) {
-            PRODUCTOS_EN_CARRITO[INDEX].cantidad--;
-        } else {
-            PRODUCTOS_EN_CARRITO.splice(INDEX, 1); // Elimina el producto del array si la cantidad es 1
+// Boton Eliminar del Carrito
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('eliminar')) {
+        const CODIGO_BOTON = e.target.id;
+        console.log("Código del botón:", CODIGO_BOTON);
+
+        const INDEX = PRODUCTOS_EN_CARRITO.findIndex(contenedor__box => contenedor__box.codigo === CODIGO_BOTON);
+        console.log("Índice del producto en el carrito:", INDEX);
+
+        if (INDEX !== -1) {
+            if (PRODUCTOS_EN_CARRITO[INDEX].cantidad > 1) {
+                PRODUCTOS_EN_CARRITO[INDEX].cantidad--;
+            } else {
+                PRODUCTOS_EN_CARRITO.splice(INDEX, 1);
+            }
         }
+
+        cargarCarrito(PRODUCTOS_EN_CARRITO);
+        actualizarNumerito();
+        localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO));
     }
-    
-    cargarCarrito(PRODUCTOS_EN_CARRITO);
-    actualizarNumerito();
-    localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO)); // Actualiza localStorage
-}
-
-
+});
 
 
 

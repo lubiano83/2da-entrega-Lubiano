@@ -208,7 +208,7 @@ h5 {
   border: 1px solid #5B8D9F;
 }
 
-.pagar, .agregar, .botonEliminar {
+.pagar, .agregar, .eliminar {
   font-size: 16px;
   background-color: #8ED3C4;
   border: 1px solid #8ED3C4;
@@ -219,7 +219,7 @@ h5 {
   border-radius: 10px;
   margin-top: 10px;
 }
-.pagar:hover, .agregar:hover, .botonEliminar:hover {
+.pagar:hover, .agregar:hover, .eliminar:hover {
   background-color: #5B8D9F;
   color: #342E3C;
   border: 1px solid #5B8D9F;
@@ -342,7 +342,7 @@ h5 {
   justify-content: center;
   align-items: center;
 }
-.carrito #carritoContenedor .contenedor__box .box__eliminar .botonEliminar {
+.carrito #carritoContenedor .contenedor__box .box__eliminar .eliminar {
   margin: -20px 0px 20px 0px;
 }
 .carrito #carritoContenedor #carritoComprado {

@@ -21,7 +21,7 @@
     }
 }
 
-.pagar, .agregar, .botonEliminar {
+.pagar, .agregar, .eliminar {
     @include botones(map-get($colores, color-1), map-get($colores, color-6), center, map-get($colores, color-6));
     border-radius: 10px;
     margin-top: 10px;
