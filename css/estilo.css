@@ -389,10 +389,10 @@ h5 {
   }
   .carrito {
     margin-top: 114px;
-    height: calc(80vh - 114px);
+    height: calc(90vh - 114px);
   }
   .carrito #carritoContenedor {
-    height: calc(80vh - 300px);
+    height: calc(90vh - 300px);
   }
   .header .header__contenedor .contenedor__carrito {
     margin: 30px;
@@ -440,10 +440,10 @@ h5 {
   }
   .carrito {
     margin-top: 74px;
-    height: calc(80vh - 74px);
+    height: calc(90vh - 74px);
   }
   .carrito #carritoContenedor {
-    height: calc(80vh - 250px);
+    height: calc(90vh - 250px);
   }
   .header .header__contenedor .contenedor__carrito {
     margin: 30px;
