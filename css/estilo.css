@@ -100,7 +100,7 @@ h5 {
 /* Carousel */
 .carousel {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/1.84;
   background-color: white;
   position: relative;
   z-index: 1;
@@ -108,7 +108,7 @@ h5 {
 }
 .carousel .carousel__foto {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/1.84;
 }
 
 /* Filtros */
