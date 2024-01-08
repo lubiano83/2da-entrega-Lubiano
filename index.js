@@ -148,23 +148,28 @@ function agregarAlCarrito(e) {
     const CODIGO_BOTON = e.currentTarget.id;
     const PRODUCTO_AGREGADO = PRODUCTOS.find(contenedor__box => contenedor__box.codigo === CODIGO_BOTON);
 
-    if (PRODUCTOS_EN_CARRITO.some(contenedor__box => contenedor__box.codigo === CODIGO_BOTON)) {
-        const INDEX = PRODUCTOS_EN_CARRITO.findIndex(contenedor__box => contenedor__box.codigo === CODIGO_BOTON);
-        PRODUCTOS_EN_CARRITO[INDEX].cantidad++
+    const EN_CARRITO = PRODUCTOS_EN_CARRITO.find(item => item.codigo === CODIGO_BOTON);
+    
+    if (EN_CARRITO) {
+        if (EN_CARRITO.cantidad < PRODUCTO_AGREGADO.cantidad) {
+            EN_CARRITO.cantidad++;
+        } else {
+            alert("No hay suficiente stock disponible");
+        }
     } else {
-        PRODUCTO_AGREGADO.cantidad = 1;
-        PRODUCTOS_EN_CARRITO.push(PRODUCTO_AGREGADO);
+        if (PRODUCTO_AGREGADO.cantidad > 0) {
+            const NUEVO_PRODUCTO = { ...PRODUCTO_AGREGADO, cantidad: 1 };
+            PRODUCTOS_EN_CARRITO.push(NUEVO_PRODUCTO);
+        } else {
+            alert("No hay suficiente stock disponible");
+        }
     }
+
     cargarCarrito(PRODUCTOS_EN_CARRITO);
     actualizarNumerito();
-    localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO)); // almacenar el carrito en local storage
+    localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO));
     document.dispatchEvent(new Event('productoModificado'));
-}; 
-document.addEventListener('DOMContentLoaded', () => { // para que no se vacie el carro cuando se refresca y se agrega un nuevo producto
-    let productosGuardados = JSON.parse(localStorage.getItem("PRODUCTOS_EN_CARRITO")) || [];
-    PRODUCTOS_EN_CARRITO.push(...productosGuardados);
-    cargarCarrito(productosGuardados);
-});
+};
 
 // Actualizar Numerito de Carrito
 function actualizarNumerito() {
@@ -269,6 +274,7 @@ function verificarProductosEnCarrito() {
 
 const PAGAR_CARRITO = document.getElementById("pagarCarrito");
 PAGAR_CARRITO.onclick = verificarProductosEnCarrito;
+
 
 
 
