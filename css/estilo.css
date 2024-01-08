@@ -390,6 +390,7 @@ h5 {
   .carrito {
     margin-top: 114px;
     height: calc(90vh - 114px);
+    border-bottom: 1px solid #8ED3C4;
   }
   .carrito #carritoContenedor {
     height: calc(90vh - 300px);
@@ -441,6 +442,7 @@ h5 {
   .carrito {
     margin-top: 74px;
     height: calc(90vh - 74px);
+    border-bottom: 1px solid #8ED3C4;
   }
   .carrito #carritoContenedor {
     height: calc(90vh - 250px);
