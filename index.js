@@ -1,6 +1,6 @@
 // Definiendo las Propiedades
 class Producto {
-    constructor(codigo, imagen, tipo, marca, modelo, otro1, otro2, cantidad, precio,) {
+    constructor(codigo, imagen, tipo, marca, modelo, otro1, otro2, cantidad, precio) {
         this.codigo = codigo;
         this.imagen = imagen;
         this.tipo = tipo;
@@ -260,22 +260,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Boton pagar
+// function verificarProductosEnCarrito() {
+//     const mensajeCarritoVacio = document.getElementById('carritoVacio');
+
+//     if (PRODUCTOS_EN_CARRITO.length > 0) {
+//         alert("Muchas Gracias por tu Compra!!");
+//         PRODUCTOS_EN_CARRITO.splice(0, PRODUCTOS_EN_CARRITO.length); // Vaciar el carrito al confirmar la compra
+//     }
+//     cargarCarrito(PRODUCTOS_EN_CARRITO);
+//     actualizarNumerito();
+//     localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO));
+// }
+
+// const PAGAR_CARRITO = document.getElementById("pagarCarrito");
+// PAGAR_CARRITO.onclick = verificarProductosEnCarrito;
+
 function verificarProductosEnCarrito() {
     const mensajeCarritoVacio = document.getElementById('carritoVacio');
 
     if (PRODUCTOS_EN_CARRITO.length > 0) {
         alert("Muchas Gracias por tu Compra!!");
+        for (const productoCarrito of PRODUCTOS_EN_CARRITO) {
+            const productoExistente = PRODUCTOS.find(producto => producto.codigo === productoCarrito.codigo);
+            if (productoExistente) {
+                productoExistente.cantidad -= productoCarrito.cantidad; // Reducir la cantidad en la lista de productos
+            }
+        }
         PRODUCTOS_EN_CARRITO.splice(0, PRODUCTOS_EN_CARRITO.length); // Vaciar el carrito al confirmar la compra
     }
     cargarCarrito(PRODUCTOS_EN_CARRITO);
     actualizarNumerito();
     localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO));
+    cargarProductos(PRODUCTOS); // Actualizar la interfaz para reflejar los cambios en la cantidad de productos
 }
-
 const PAGAR_CARRITO = document.getElementById("pagarCarrito");
 PAGAR_CARRITO.onclick = verificarProductosEnCarrito;
-
-
 
 
 
