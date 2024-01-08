@@ -19,7 +19,6 @@
     border-left: 1px solid map-get($colores, color-6);
 
     #carritoVacio {
-        display: none;
         color: map-get($colores, color-6);
         margin: 30px;
     }
@@ -53,7 +52,7 @@
             .box__texto {
                 position: relative;
                 color: map-get($colores, color-6);
-                margin: 20px 10px 20px 10px;
+                margin: 10px;
                 background-color: map-get($colores, color-1);
                 padding: 10px;
                 .eliminar {

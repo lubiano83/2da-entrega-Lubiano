@@ -256,6 +256,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Boton pagar
 function verificarProductosEnCarrito() {
+    const mensajeCarritoVacio = document.getElementById('carritoVacio');
+
     if (PRODUCTOS_EN_CARRITO.length > 0) {
         alert("Muchas Gracias por tu Compra!!");
         PRODUCTOS_EN_CARRITO.splice(0, PRODUCTOS_EN_CARRITO.length); // Vaciar el carrito al confirmar la compra
@@ -264,8 +266,10 @@ function verificarProductosEnCarrito() {
     actualizarNumerito();
     localStorage.setItem("PRODUCTOS_EN_CARRITO", JSON.stringify(PRODUCTOS_EN_CARRITO));
 }
+
 const PAGAR_CARRITO = document.getElementById("pagarCarrito");
 PAGAR_CARRITO.onclick = verificarProductosEnCarrito;
+
 
 
 
