@@ -7,7 +7,7 @@
         justify-content: space-evenly;
         align-items: center;
         margin: 0px 15px 30px 15px;
-        .contenedor__box {
+        .producto {
             width: 300px;
             border-radius: 15px;
             overflow: hidden;
@@ -16,7 +16,7 @@
             background-color: map-get($colores, color-1);
             color: map-get($colores, color-6);
             box-shadow: 5px 5px 5px map-get($colores, color-1);
-            .box__foto {
+            .producto__foto {
                 
                 .foto {
                     width: 100%;
@@ -24,7 +24,7 @@
                     background-color: white;
                 }
             }
-            .box__texto {
+            .producto__texto {
                 margin: 20px 10px 20px 10px;
                 .agregar {
                     position: relative;

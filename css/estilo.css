@@ -166,7 +166,7 @@ h5 {
   align-items: center;
   margin: 0px 15px 30px 15px;
 }
-.productos #productosContenedor .contenedor__box {
+.productos #productosContenedor .producto {
   width: 300px;
   border-radius: 15px;
   overflow: hidden;
@@ -176,15 +176,15 @@ h5 {
   color: #8ED3C4;
   box-shadow: 5px 5px 5px #342E3C;
 }
-.productos #productosContenedor .contenedor__box .box__foto .foto {
+.productos #productosContenedor .producto .producto__foto .foto {
   width: 100%;
   aspect-ratio: 1/1;
   background-color: white;
 }
-.productos #productosContenedor .contenedor__box .box__texto {
+.productos #productosContenedor .producto .producto__texto {
   margin: 20px 10px 20px 10px;
 }
-.productos #productosContenedor .contenedor__box .box__texto .agregar {
+.productos #productosContenedor .producto .producto__texto .agregar {
   position: relative;
   margin: 10px 20px 0px 20px;
   right: -75px;
@@ -310,7 +310,7 @@ h5 {
   overflow-y: scroll;
   height: calc(100vh - 280px);
 }
-.carrito #carritoContenedor .contenedor__box {
+.carrito #carritoContenedor .producto {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -321,22 +321,22 @@ h5 {
   overflow: hidden;
   border: 2px solid #8ED3C4;
 }
-.carrito #carritoContenedor .contenedor__box .box__foto {
+.carrito #carritoContenedor .producto .producto__foto {
   width: 300px;
   aspect-ratio: 1/1;
   background-color: white;
 }
-.carrito #carritoContenedor .contenedor__box .box__foto .foto {
+.carrito #carritoContenedor .producto .producto__foto .foto {
   width: 100%;
 }
-.carrito #carritoContenedor .contenedor__box .box__texto {
+.carrito #carritoContenedor .producto .producto__texto {
   position: relative;
   color: #8ED3C4;
   margin: 10px;
   background-color: #342E3C;
   padding: 10px;
 }
-.carrito #carritoContenedor .contenedor__box .box__texto .eliminar {
+.carrito #carritoContenedor .producto .producto__texto .eliminar {
   position: relative;
   margin: 10px 20px 0px 20px;
   right: -70px;
