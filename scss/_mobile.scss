@@ -69,6 +69,12 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar:hover, .reset:active {
+        display: none;
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        display: none;
+    }
 }
 
 /* 406px & 500px */
@@ -133,6 +139,12 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar:hover, .reset:active {
+        display: none;
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        display: none;
+    }
 }
 
 /* 501px & 591px */
@@ -196,6 +208,12 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar:hover, .reset:active {
+        display: none;
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        display: none;
+    }
 }
 
 /* 592px & 701px */
@@ -256,6 +274,12 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar:hover, .reset:active {
+        display: none;
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        display: none;
+    }
 }
 
 /* 702px & 1199px */
@@ -315,6 +339,12 @@
         color: #342E3C;
         border: 1px solid #5B8D9F;
         scale: 1.1;
+    }
+    .enviar:hover, .reset:active {
+        display: none;
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        display: none;
     }
 }
 
