@@ -128,21 +128,21 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar:hover, .reset:active {
+    .enviar:active, .reset:active {
         background-color: map-get($colores, color-6);
         color: map-get($colores, color-1);
         border: 1px solid map-get($colores, color-6);
     }
-    .pagar:hover, .agregar:hover, .eliminar:active {
+    .pagar:active, .agregar:active, .eliminar:active {
         background-color: #5B8D9F;
         color: #342E3C;
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
-    .enviar:hover, .reset:active {
+    .enviar:hover, .reset:hover {
         display: none;
     }
-    .pagar:hover, .agregar:hover, .eliminar:active {
+    .pagar:hover, .agregar:hover, .eliminar:hover {
         display: none;
     }
 }

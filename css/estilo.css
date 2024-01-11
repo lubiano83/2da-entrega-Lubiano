@@ -479,21 +479,21 @@ h5 {
   .footer .footer__contenedor {
     padding-bottom: 20px;
   }
-  .enviar:hover, .reset:active {
+  .enviar:active, .reset:active {
     background-color: #8ED3C4;
     color: #342E3C;
     border: 1px solid #8ED3C4;
   }
-  .pagar:hover, .agregar:hover, .eliminar:active {
+  .pagar:active, .agregar:active, .eliminar:active {
     background-color: #5B8D9F;
     color: #342E3C;
     border: 1px solid #5B8D9F;
     scale: 1.1;
   }
-  .enviar:hover, .reset:active {
+  .enviar:hover, .reset:hover {
     display: none;
   }
-  .pagar:hover, .agregar:hover, .eliminar:active {
+  .pagar:hover, .agregar:hover, .eliminar:hover {
     display: none;
   }
 }
