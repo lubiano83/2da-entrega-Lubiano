@@ -58,6 +58,17 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
+    .enviar:hover, .reset:active {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        background-color: #5B8D9F;
+        color: #342E3C;
+        border: 1px solid #5B8D9F;
+        scale: 1.1;
+    }
 }
 
 /* 406px & 500px */
@@ -111,6 +122,17 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
+    .enviar:hover, .reset:active {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        background-color: #5B8D9F;
+        color: #342E3C;
+        border: 1px solid #5B8D9F;
+        scale: 1.1;
+    }
 }
 
 /* 501px & 591px */
@@ -163,6 +185,17 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
+    .enviar:hover, .reset:active {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        background-color: #5B8D9F;
+        color: #342E3C;
+        border: 1px solid #5B8D9F;
+        scale: 1.1;
+    }
 }
 
 /* 592px & 701px */
@@ -212,6 +245,17 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
+    .enviar:hover, .reset:active {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        background-color: #5B8D9F;
+        color: #342E3C;
+        border: 1px solid #5B8D9F;
+        scale: 1.1;
+    }
 }
 
 /* 702px & 1199px */
@@ -260,6 +304,17 @@
     }
     .footer .footer__contenedor {
         padding-bottom: 20px;
+    }
+    .enviar:hover, .reset:active {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+    }
+    .pagar:hover, .agregar:hover, .eliminar:active {
+        background-color: #5B8D9F;
+        color: #342E3C;
+        border: 1px solid #5B8D9F;
+        scale: 1.1;
     }
 }
 
