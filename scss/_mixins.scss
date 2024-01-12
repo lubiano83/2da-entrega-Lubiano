@@ -13,9 +13,21 @@
 .enviar, .reset {
     @include botones(map-get($colores, color-1), map-get($colores, color-6), center, map-get($colores, color-6));
     border-radius: 10px;
+    &:hover {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+        scale: 1.1;
+    }
 }
 
 .pagar, .agregar, .eliminar {
     @include botones(map-get($colores, color-1), map-get($colores, color-6), center, map-get($colores, color-6));
     border-radius: 10px;
+    &:hover {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+        scale: 1.1;
+    }
 }

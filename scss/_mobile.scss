@@ -58,17 +58,6 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar:active, .reset:active {
-        background-color: map-get($colores, color-6);
-        color: map-get($colores, color-1);
-        border: 1px solid map-get($colores, color-6);
-    }
-    .pagar:active, .agregar:active, .eliminar:active {
-        background-color: #5B8D9F;
-        color: #342E3C;
-        border: 1px solid #5B8D9F;
-        scale: 1.1;
-    }
     .enviar, .reset, .pagar, .agregar, .eliminar {
         touch-action: manipulation;
         user-select: none;
@@ -126,17 +115,6 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar:active, .reset:active {
-        background-color: map-get($colores, color-6);
-        color: map-get($colores, color-1);
-        border: 1px solid map-get($colores, color-6);
-    }
-    .pagar:active, .agregar:active, .eliminar:active {
-        background-color: #5B8D9F;
-        color: #342E3C;
-        border: 1px solid #5B8D9F;
-        scale: 1.1;
-    }
     .enviar, .reset, .pagar, .agregar, .eliminar {
         touch-action: manipulation;
         user-select: none;
@@ -193,17 +171,6 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar:active, .reset:active {
-        background-color: map-get($colores, color-6);
-        color: map-get($colores, color-1);
-        border: 1px solid map-get($colores, color-6);
-    }
-    .pagar:active, .agregar:active, .eliminar:active {
-        background-color: #5B8D9F;
-        color: #342E3C;
-        border: 1px solid #5B8D9F;
-        scale: 1.1;
-    }
     .enviar, .reset, .pagar, .agregar, .eliminar {
         touch-action: manipulation;
         user-select: none;
@@ -256,17 +223,6 @@
     }
     .footer .footer__contenedor {
         padding-bottom: 20px;
-    }
-    .enviar:active, .reset:active {
-        background-color: map-get($colores, color-6);
-        color: map-get($colores, color-1);
-        border: 1px solid map-get($colores, color-6);
-    }
-    .pagar:active, .agregar:active, .eliminar:active {
-        background-color: #5B8D9F;
-        color: #342E3C;
-        border: 1px solid #5B8D9F;
-        scale: 1.1;
     }
     .enviar, .reset, .pagar, .agregar, .eliminar {
         touch-action: manipulation;
@@ -321,39 +277,8 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar:active, .reset:active {
-        background-color: map-get($colores, color-6);
-        color: map-get($colores, color-1);
-        border: 1px solid map-get($colores, color-6);
-    }
-    .pagar:active, .agregar:active, .eliminar:active {
-        background-color: #5B8D9F;
-        color: #342E3C;
-        border: 1px solid #5B8D9F;
-        scale: 1.1;
-    }
     .enviar, .reset, .pagar, .agregar, .eliminar {
         touch-action: manipulation;
         user-select: none;
     }
 }
-
-/* 1200px & 3000px */
-@include mobile(1200px, 3000px) {
-    .enviar:hover, .reset:hover {
-        background-color: map-get($colores, color-6);
-        color: map-get($colores, color-1);
-        border: 1px solid map-get($colores, color-6);
-    }
-    .pagar:hover, .agregar:hover, .eliminar:hover {
-        background-color: #5B8D9F;
-        color: #342E3C;
-        border: 1px solid #5B8D9F;
-        scale: 1.1;
-    }
-    .enviar, .reset, .pagar, .agregar, .eliminar {
-        touch-action: manipulation;
-        user-select: none;
-    }
-}
-
