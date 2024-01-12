@@ -202,9 +202,9 @@ h5 {
   border-radius: 10px;
 }
 .enviar:hover, .reset:hover {
-  background-color: #8ED3C4;
+  background-color: #5B8D9F;
   color: #342E3C;
-  border: 1px solid #8ED3C4;
+  border: 1px solid #5B8D9F;
   scale: 1.1;
 }
 
@@ -219,9 +219,9 @@ h5 {
   border-radius: 10px;
 }
 .pagar:hover, .agregar:hover, .eliminar:hover {
-  background-color: #8ED3C4;
+  background-color: #5B8D9F;
   color: #342E3C;
-  border: 1px solid #8ED3C4;
+  border: 1px solid #5B8D9F;
   scale: 1.1;
 }
 
