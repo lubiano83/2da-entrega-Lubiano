@@ -69,12 +69,6 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
-    .pagar:hover, .agregar:hover, .eliminar:hover {
-
-    }
-    .enviar:hover, .reset:hover {
-        
-    }
 }
 
 /* 406px & 500px */
@@ -139,12 +133,6 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
-    .pagar:hover, .agregar:hover, .eliminar:hover {
-
-    }
-    .enviar:hover, .reset:hover {
-        
-    }
 }
 
 /* 501px & 591px */
@@ -208,12 +196,6 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
-    .pagar:hover, .agregar:hover, .eliminar:hover {
-
-    }
-    .enviar:hover, .reset:hover {
-        
-    }
 }
 
 /* 592px & 701px */
@@ -273,12 +255,6 @@
         color: #342E3C;
         border: 1px solid #5B8D9F;
         scale: 1.1;
-    }
-    .pagar:hover, .agregar:hover, .eliminar:hover {
-
-    }
-    .enviar:hover, .reset:hover {
-        
     }
 }
 
@@ -340,12 +316,20 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
-    .pagar:hover, .agregar:hover, .eliminar:hover {
-
-    }
-    .enviar:hover, .reset:hover {
-        
-    }
 }
 
+/* 1200px & 3000px */
+@include mobile(1200px, 3000px) {
+    .enviar:hover, .reset:hover {
+        background-color: map-get($colores, color-6);
+        color: map-get($colores, color-1);
+        border: 1px solid map-get($colores, color-6);
+    }
+    .pagar:hover, .agregar:hover, .eliminar:hover {
+        background-color: #5B8D9F;
+        color: #342E3C;
+        border: 1px solid #5B8D9F;
+        scale: 1.1;
+    }
+}
 
