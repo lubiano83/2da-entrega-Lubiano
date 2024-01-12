@@ -58,7 +58,7 @@ function cargarProductos(productoSeleccionado) {
                 <h4>Descripción: ${producto.marca}, ${producto.modelo}, ${producto.otro1}, ${producto.otro2}</h4>
                 <h4>Precio: $${formatearPrecio(producto.precio)}</h4>
                 <h4>Cantidad: ${producto.cantidad}</h4>
-                <button class="agregar" id="${producto.codigo}">Agregar</button>
+                <button class="agregar elemento" id="${producto.codigo}">Agregar</button>
             </div>
         `;
         PRODUCTOS_CONTENEDOR.appendChild(ARTICLE);
@@ -206,7 +206,7 @@ function cargarCarrito(productoSeleccionado) {
                 <h4>Descripción: ${producto.marca} ${producto.modelo} ${producto.otro1} ${producto.otro2}</h4>
                 <h4>Precio: $${formatearPrecio(producto.precio)}</h4>
                 <h4>Cantidad: ${producto.cantidad}</h4>
-                <button class="eliminar" id="${producto.codigo}">Eliminar</button>
+                <button class="eliminar elemento" id="${producto.codigo}">Eliminar</button>
             </div>
         `;
         CARRITO_CONTENEDOR.appendChild(ARTICLE); // Agregar el elemento ARTICLE al contenedor
