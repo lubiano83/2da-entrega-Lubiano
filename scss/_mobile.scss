@@ -69,6 +69,10 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar, .reset, .pagar, .agregar, .eliminar {
+        touch-action: manipulation;
+        user-select: none;
+    }
 }
 
 /* 406px & 500px */
@@ -133,6 +137,10 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar, .reset, .pagar, .agregar, .eliminar {
+        touch-action: manipulation;
+        user-select: none;
+    }
 }
 
 /* 501px & 591px */
@@ -196,6 +204,10 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar, .reset, .pagar, .agregar, .eliminar {
+        touch-action: manipulation;
+        user-select: none;
+    }
 }
 
 /* 592px & 701px */
@@ -255,6 +267,10 @@
         color: #342E3C;
         border: 1px solid #5B8D9F;
         scale: 1.1;
+    }
+    .enviar, .reset, .pagar, .agregar, .eliminar {
+        touch-action: manipulation;
+        user-select: none;
     }
 }
 
@@ -316,6 +332,10 @@
         border: 1px solid #5B8D9F;
         scale: 1.1;
     }
+    .enviar, .reset, .pagar, .agregar, .eliminar {
+        touch-action: manipulation;
+        user-select: none;
+    }
 }
 
 /* 1200px & 3000px */
@@ -330,6 +350,10 @@
         color: #342E3C;
         border: 1px solid #5B8D9F;
         scale: 1.1;
+    }
+    .enviar, .reset, .pagar, .agregar, .eliminar {
+        touch-action: manipulation;
+        user-select: none;
     }
 }
 
