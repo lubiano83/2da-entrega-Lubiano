@@ -58,10 +58,6 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar, .reset, .pagar, .agregar, .eliminar {
-        touch-action: manipulation;
-        user-select: none;
-    }
 }
 
 /* 406px & 500px */
@@ -115,9 +111,11 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar, .reset, .pagar, .agregar, .eliminar {
-        touch-action: manipulation;
-        user-select: none;
+    .enviar:hover, .reset:hover {
+        
+    }
+    .pagar:hover, .agregar:hover, .eliminar:hover {
+        
     }
 }
 
@@ -171,10 +169,6 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar, .reset, .pagar, .agregar, .eliminar {
-        touch-action: manipulation;
-        user-select: none;
-    }
 }
 
 /* 592px & 701px */
@@ -224,10 +218,6 @@
     .footer .footer__contenedor {
         padding-bottom: 20px;
     }
-    .enviar, .reset, .pagar, .agregar, .eliminar {
-        touch-action: manipulation;
-        user-select: none;
-    }
 }
 
 /* 702px & 1199px */
@@ -276,9 +266,5 @@
     }
     .footer .footer__contenedor {
         padding-bottom: 20px;
-    }
-    .enviar, .reset, .pagar, .agregar, .eliminar {
-        touch-action: manipulation;
-        user-select: none;
     }
 }
