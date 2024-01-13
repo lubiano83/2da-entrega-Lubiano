@@ -20,6 +20,8 @@
         color: map-get($colores, color-1);
         border: 1px solid map-get($colores, color-4);
         scale: 1.1;
+        touch-action: manipulation;
+        user-select: none;
     }
 }
 
@@ -33,5 +35,7 @@
         color: map-get($colores, color-1);
         border: 1px solid map-get($colores, color-4);
         scale: 1.1;
+        touch-action: manipulation;
+        user-select: none;
     }
 }
