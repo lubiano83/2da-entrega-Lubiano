@@ -467,6 +467,18 @@ h5 {
   .footer .footer__contenedor {
     padding-bottom: 20px;
   }
+  .pagar:active, .agregar:active, .eliminar:active {
+    background-color: #5B8D9F;
+    color: #342E3C;
+    border: 1px solid #5B8D9F;
+    scale: 1.1;
+  }
+  .enviar:active, .reset:active {
+    background-color: #5B8D9F;
+    color: #342E3C;
+    border: 1px solid #5B8D9F;
+    scale: 1.1;
+  }
 }
 /* 501px & 591px */
 @media screen and (min-width: 501px) and (max-width: 591px) {
