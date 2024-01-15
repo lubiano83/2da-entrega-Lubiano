@@ -42,6 +42,7 @@ let botonesAgregar = document.querySelectorAll(`.agregar`);
 let numerito = document.getElementById(`numerito`);
 let botonesEliminar = document.querySelectorAll(`.eliminar`);
 let  productoEnCarrito = JSON.parse(localStorage.getItem(`productoEnCarrito`)) || []; // Cargar productos del carrito desde localStorage al inicio
+const TITULO_PRINCIPAL = document.getElementById(`tituloPrincipal`);
 
 // Cargar Productos en Pagina
 function cargarProductos(productoSeleccionado) {
@@ -83,9 +84,6 @@ function formatearPrecio(precio) {
 function capitalizarPrimeraLetra(texto) { 
     return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
 }
-
-// Titulo Principal
-const TITULO_PRINCIPAL = document.getElementById(`tituloPrincipal`);
 
 // Dropdown Selector
 const DROPDOWN = document.querySelectorAll(`.dropdown-item`);
@@ -210,8 +208,7 @@ function cargarCarrito(productoSeleccionado) {
             </div>
         `;
         CARRITO_CONTENEDOR.appendChild(ARTICLE); // Agregar el elemento ARTICLE al contenedor
-    });
-    actualizarBotonesEliminar(); // Actualizar eventos de los botones eliminar
+    }); actualizarBotonesEliminar(); // Actualizar eventos de los botones eliminar
 }
 const PRODUCTOS_GUARDADOS = JSON.parse(localStorage.getItem(`productoEnCarrito`)) || []; // Llamar a cargarCarrito con los productos guardados en localStorage al iniciar
 cargarCarrito(PRODUCTOS_GUARDADOS);
