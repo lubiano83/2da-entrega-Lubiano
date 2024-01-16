@@ -127,9 +127,10 @@ BARRA_BUSQUEDA.addEventListener(`input`, function () {
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
     } else {
         Swal.fire({
-            title: "¡Atención!",
+            title: "¡Error!",
             text: "No se encontraron resultados para esa búsqueda.",
-            icon: "error"
+            icon: "error",
+            confirmButtonColor: "red"
         });
         TITULO_PRINCIPAL.innerText = `Todos los Productos`;
         cargarProductos(PRODUCTOS);
@@ -167,7 +168,8 @@ function agregarAlCarrito(e) {
             Swal.fire({
                 title: "¡Atención!",
                 text: "No hay suficiente stock disponible.",
-                icon: "warning"
+                icon: "warning",
+                confirmButtonColor: `darkgoldenrod`
             });
         }
     } else {
@@ -178,7 +180,8 @@ function agregarAlCarrito(e) {
             Swal.fire({
                 title: "¡Atención!",
                 text: "No hay suficiente stock disponible",
-                icon: "warning"
+                icon: "warning",
+                confirmButtonColor: `darkgoldenrod`
             });
         }
     }
@@ -246,8 +249,10 @@ function eliminarDelCarrito(e) {
             Swal.fire({
                 title: "¡Atención!",
                 text: "Producto eliminado del carrito.",
-                icon: "warning"
+                icon: "warning",
+                confirmButtonColor: `darkgoldenrod`
             });
+            
         }
     }
     cargarCarrito(productoEnCarrito);
@@ -279,7 +284,9 @@ function verificarProductosEnCarrito() {
         Swal.fire({
             title: "¡Compra Realizada!",
             text: "Muchas gracias por confiar en nosotros...",
-            icon: "success"
+            icon: "success",
+            confirmButtonColor: `green`
+            
         });
         productoEnCarrito.splice(0, productoEnCarrito.length); // Vaciar el carrito al confirmar la compra
     }
