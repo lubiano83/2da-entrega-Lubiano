@@ -243,6 +243,11 @@ function eliminarDelCarrito(e) {
             productoEnCarrito[INDEX].cantidad--;
         } else {
             productoEnCarrito.splice(INDEX, 1);
+            Swal.fire({
+                title: "¡Atención!",
+                text: "Producto eliminado del carrito.",
+                icon: "warning"
+            });
         }
     }
     cargarCarrito(productoEnCarrito);
@@ -273,7 +278,7 @@ function verificarProductosEnCarrito() {
     if (productoEnCarrito.length > 0) {
         Swal.fire({
             title: "¡Compra Realizada!",
-            text: "Muchas Gracias por Confiar en Nosotros...",
+            text: "Muchas gracias por confiar en nosotros...",
             icon: "success"
         });
         productoEnCarrito.splice(0, productoEnCarrito.length); // Vaciar el carrito al confirmar la compra
