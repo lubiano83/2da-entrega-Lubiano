@@ -64,7 +64,6 @@ function cargarProductos(productoSeleccionado) {
         `;
         PRODUCTOS_CONTENEDOR.appendChild(ARTICLE);
     }); actualizarBotonesAgregar();
-    console.log(botonesAgregar);
 }; cargarProductos(PRODUCTOS); // Suponiendo que PRODUCTOS es un array de objetos con los datos de los productos
 
 // Precio Speradado con un Punto
@@ -239,7 +238,6 @@ function actualizarBotonesEliminar() {
 // Eliminar Productos del Carrito
 function eliminarDelCarrito(e) {
     const CODIGO_BOTON = e.currentTarget.id;
-    console.log(`Código del botón:`, CODIGO_BOTON); // Verifica que esté obteniendo el código correcto
     const INDEX = productoEnCarrito.findIndex(producto => producto.codigo === CODIGO_BOTON);
     if (INDEX !== -1) {
         if (productoEnCarrito[INDEX].cantidad > 1) {
@@ -286,7 +284,6 @@ function verificarProductosEnCarrito() {
             text: "Muchas gracias por confiar en nosotros...",
             icon: "success",
             confirmButtonColor: `green`
-            
         });
         productoEnCarrito.splice(0, productoEnCarrito.length); // Vaciar el carrito al confirmar la compra
     }
