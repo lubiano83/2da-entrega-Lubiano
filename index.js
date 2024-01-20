@@ -91,7 +91,6 @@ DROPDOWN.forEach(boton => {
         if (e.currentTarget.id !== `TODOS`) {
             const PRODUCTO_CATEGORIA = PRODUCTOS.find(producto => producto.tipo === e.currentTarget.id);
             TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(PRODUCTO_CATEGORIA.tipo);
-
             const PRODUCTOS_FILTRADOS = PRODUCTOS.filter(producto => producto.tipo === e.currentTarget.id);
             cargarProductos(PRODUCTOS_FILTRADOS);
         } else {
@@ -125,12 +124,14 @@ BARRA_BUSQUEDA.addEventListener(`input`, function () {
         cargarProductos(PRODUCTOS_FILTRADOS);
         TITULO_PRINCIPAL.innerText = capitalizarPrimeraLetra(TEXTO_BUSQUEDA);
     } else {
-        Swal.fire({
-            title: "¡Error!",
-            text: "No se encontraron resultados para esa búsqueda.",
-            icon: "error",
-            confirmButtonColor: "red"
-        });
+        setTimeout(() => {
+            Swal.fire({
+                title: "¡Error!",
+                text: "No se encontraron resultados para esa búsqueda.",
+                icon: "error",
+                confirmButtonColor: "red"
+            });
+        },300);
         TITULO_PRINCIPAL.innerText = `Todos los Productos`;
         cargarProductos(PRODUCTOS);
     }
@@ -164,24 +165,28 @@ function agregarAlCarrito(e) {
         if (EN_CARRITO.cantidad < PRODUCTO_AGREGADO.cantidad) {
             EN_CARRITO.cantidad++;
         } else {
-            Swal.fire({
-                title: "¡Atención!",
-                text: "No hay suficiente stock disponible.",
-                icon: "warning",
-                confirmButtonColor: `darkgoldenrod`
-            });
+            setTimeout(() => {
+                Swal.fire({
+                    title: "¡Atención!",
+                    text: "No hay suficiente stock disponible",
+                    icon: "warning",
+                    confirmButtonColor: `darkgoldenrod`
+                });
+            }, 300);
         }
     } else {
         if (PRODUCTO_AGREGADO.cantidad > 0) {
             const NUEVO_PRODUCTO = { ...PRODUCTO_AGREGADO, cantidad: 1 };
             productoEnCarrito.push(NUEVO_PRODUCTO);
         } else {
-            Swal.fire({
-                title: "¡Atención!",
-                text: "No hay suficiente stock disponible",
-                icon: "warning",
-                confirmButtonColor: `darkgoldenrod`
-            });
+            setTimeout(() => {
+                Swal.fire({
+                    title: "¡Atención!",
+                    text: "No hay suficiente stock disponible",
+                    icon: "warning",
+                    confirmButtonColor: `darkgoldenrod`
+                });
+            }, 300);
         }
     }
     actualizarNumerito();
@@ -244,13 +249,14 @@ function eliminarDelCarrito(e) {
             productoEnCarrito[INDEX].cantidad--;
         } else {
             productoEnCarrito.splice(INDEX, 1);
-            Swal.fire({
-                title: "¡Atención!",
-                text: "Producto eliminado del carrito.",
-                icon: "warning",
-                confirmButtonColor: `darkgoldenrod`
-            });
-            
+            setTimeout(() => {
+                Swal.fire({
+                    title: "¡Atención!",
+                    text: "Producto eliminado del carrito.",
+                    icon: "warning",
+                    confirmButtonColor: `darkgoldenrod`
+                });
+            },300);
         }
     }
     cargarCarrito(productoEnCarrito);
@@ -279,12 +285,14 @@ function mostrarPrecioTotalEnCarrito() {
 // Boton Pagar en Carrito
 function verificarProductosEnCarrito() {
     if (productoEnCarrito.length > 0) {
-        Swal.fire({
-            title: "¡Compra Realizada!",
-            text: "Muchas gracias por confiar en nosotros...",
-            icon: "success",
-            confirmButtonColor: `green`
-        });
+        setTimeout(() => {
+            Swal.fire({
+                title: "¡Compra Realizada!",
+                text: "Muchas gracias por confiar en nosotros...",
+                icon: "success",
+                confirmButtonColor: `green`
+            });
+        }, 300);
         productoEnCarrito.splice(0, productoEnCarrito.length); // Vaciar el carrito al confirmar la compra
     }
     cargarCarrito(productoEnCarrito);
