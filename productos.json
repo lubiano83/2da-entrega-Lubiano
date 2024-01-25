@@ -1,0 +1,167 @@
+[
+  {
+    "codigo": "50170-0",
+    "foto": "./img/hankook K715.jpeg",
+    "tipo": "NEUMATICOS",
+    "marca": "HANKOOK",
+    "modelo": "K715",
+    "otro1": "155/65R13",
+    "otro2": "OPTIMO",
+    "cantidad": "4",
+    "precio": 59890
+  },
+  {
+    "codigo": "50174-3",
+    "foto": "./img/hankook H724.jpeg",
+    "tipo": "NEUMATICOS",
+    "marca": "HANKOOK",
+    "modelo": "H724",
+    "otro1": "185/65R14",
+    "otro2": "OPTIMO",
+    "cantidad": "4",
+    "precio": 59890
+  },
+  {
+    "codigo": "50595-1",
+    "foto": "./img/hankook H308.jpeg",
+    "tipo": "NEUMATICOS",
+    "marca": "HANKOOK",
+    "modelo": "H308",
+    "otro1": "175/60R15",
+    "otro2": "KINERGY",
+    "cantidad": "4",
+    "precio": 49890
+  },
+  {
+    "codigo": "09076-K",
+    "foto": "./img/hankook MF54321.jpeg",
+    "tipo": "BATERIAS",
+    "marca": "HANKOOK",
+    "modelo": "MF54321",
+    "otro1": "45AH",
+    "otro2": "450CCA",
+    "cantidad": "4",
+    "precio": 69890
+  },
+  {
+    "codigo": "09030-1",
+    "foto": "./img/hankook MF55457.jpeg",
+    "tipo": "BATERIAS",
+    "marca": "HANKOOK",
+    "modelo": "MF55457",
+    "otro1": "55AH",
+    "otro2": "480CCA",
+    "cantidad": "5",
+    "precio": 79890
+  },
+  {
+    "codigo": "09095-6",
+    "foto": "./img/hankook MF47600.jpeg",
+    "tipo": "BATERIAS",
+    "marca": "HANKOOK",
+    "modelo": "MF47600",
+    "otro1": "60AH",
+    "otro2": "600CCA",
+    "cantidad": "3",
+    "precio": 98980
+  },
+  {
+    "codigo": "22212-7",
+    "foto": "./img/shell 5w30 hx8.webp",
+    "tipo": "ACEITES",
+    "marca": "SHELL",
+    "modelo": "HX8",
+    "otro1": "5W-30",
+    "otro2": "BENCINERO",
+    "cantidad": "6",
+    "precio": 47290
+  },
+  {
+    "codigo": "22135-K",
+    "foto": "./img/shell 15w40 hx5.webp",
+    "tipo": "ACEITES",
+    "marca": "SHELL",
+    "modelo": "HX5",
+    "otro1": "15W-40",
+    "otro2": "BENCINERO",
+    "cantidad": "6",
+    "precio": 29690
+  },
+  {
+    "codigo": "22013-2",
+    "foto": "./img/10w-40 petroleo shell.jpeg",
+    "tipo": "ACEITES",
+    "marca": "SHELL",
+    "modelo": "R5",
+    "otro1": "10W-40",
+    "otro2": "PETROLERO",
+    "cantidad": "3",
+    "precio": 35990
+  },
+  {
+    "codigo": "25508-4",
+    "foto": "./img/man c30171.jpeg",
+    "tipo": "FILTROS",
+    "marca": "MANN",
+    "modelo": "C30171",
+    "otro1": "AIRE",
+    "otro2": "",
+    "cantidad": "3",
+    "precio": 9900
+  },
+  {
+    "codigo": "25479-7",
+    "foto": "./img/mann hu 718:5X.jpeg",
+    "tipo": "FILTROS",
+    "marca": "MANN",
+    "modelo": "HU718/5X",
+    "otro1": "ELEMENTO",
+    "otro2": "",
+    "cantidad": "3",
+    "precio": 9700
+  },
+  {
+    "codigo": "26007-K",
+    "foto": "./img/mann w610:6.jpeg",
+    "tipo": "FILTROS",
+    "marca": "MANN",
+    "modelo": "W610/6",
+    "otro1": "ACEITE",
+    "otro2": "",
+    "cantidad": "3",
+    "precio": 6280
+  },
+  {
+    "codigo": "42088-3",
+    "foto": "./img/paloma parfum.png",
+    "tipo": "AROMATIZANTES",
+    "marca": "PALOMA",
+    "modelo": "PARFUM",
+    "otro1": "VAINILLA",
+    "otro2": "",
+    "cantidad": "10",
+    "precio": 1800
+  },
+  {
+    "codigo": "42055-7",
+    "foto": "./img/paloma aqua balls.png",
+    "tipo": "AROMATIZANTES",
+    "marca": "PALOMA",
+    "modelo": "WOODY",
+    "otro1": "FLORAL",
+    "otro2": "",
+    "cantidad": "3",
+    "precio": 2400
+  },
+  {
+    "codigo": "42120-0",
+    "foto": "./img/paloma happy bag.png",
+    "tipo": "AROMATIZANTES",
+    "marca": "PALOMA",
+    "modelo": "HAPPY BAG",
+    "otro1": "SPORT",
+    "otro2": "",
+    "cantidad": "5",
+    "precio": 1890
+  }
+]

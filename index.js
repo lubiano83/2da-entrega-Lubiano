@@ -1,48 +1,32 @@
-// Agregar Productos al Array Directamente
-function cargarProductoEnArray(producto) {
-    class Producto { // Definiendo Producto
-        constructor(codigo, foto,  tipo, marca, modelo, otro1, otro2, cantidad, precio) {
-            this.codigo = codigo;
-            this.foto = foto;
-            this.tipo = tipo;
-            this.marca = marca;
-            this.modelo = modelo;
-            this.otro1 = otro1;
-            this.otro2 = otro2;
-            this.cantidad = cantidad;
-            this.precio = precio;
-        }
-    }
-    const PRODUCTO = [ // Distintos Productos
-        // Neumaticos
-        new Producto(`50170-0`, `./img/hankook K715.jpeg`, `NEUMATICOS`, `HANKOOK`, `K715`, `155/65R13`, `OPTIMO`, `4`, 59890),
-        new Producto(`50174-3`, `./img/hankook H724.jpeg`, `NEUMATICOS`, `HANKOOK`, `H724`, `185/65R14`, `OPTIMO`, `4`, 59890),
-        new Producto(`50595-1`, `./img/hankook H308.jpeg`, `NEUMATICOS`, `HANKOOK`, `H308`, `175/60R15`, `KINERGY`, `4`, 49890),
-        // Baterias
-        new Producto(`09076-K`, `./img/hankook MF54321.jpeg`, `BATERIAS`, `HANKOOK`, `MF54321`, `45AH`, `450CCA`, `4`, 69890),
-        new Producto(`09030-1`, `./img/hankook MF55457.jpeg`, `BATERIAS`, `HANKOOK`, `MF55457`, `55AH`, `480CCA`, `5`, 79890),
-        new Producto(`09095-6`, `./img/hankook MF47600.jpeg`, `BATERIAS`, `HANKOOK`, `MF47600`, `60AH`, `600CCA`, `3`, 98980),
-        // Aceites
-        new Producto(`22212-7`, `./img/shell 5w30 hx8.webp`, `ACEITES`, `SHELL`, `HX8`, `5W-30`, `BENCINERO`, `6`, 47290),
-        new Producto(`22135-K`, `./img/shell 15w40 hx5.webp`, `ACEITES`, `SHELL`, `HX5`, `15W-40`, `BENCINERO`, `6`, 29690),
-        new Producto(`22013-2`, `./img/10w-40 petroleo shell.jpeg`, `ACEITES`, `SHELL`, `R5`, `10W-40`, `PETROLERO`, `3`, 35990),
-        // Filtros
-        new Producto(`25508-4`, `./img/man c30171.jpeg`, `FILTROS`, `MANN`, `C30171`, `AIRE`, ``, `3`, 9900),
-        new Producto(`25479-7`, `./img/mann hu 718:5X.jpeg`, `FILTROS`, `MANN`, `HU718/5X`, `ELEMENTO`, ``, `3`, 9700),
-        new Producto(`26007-K`, `./img/mann w610:6.jpeg`, `FILTROS`, `MANN`, `W610/6`, `ACEITE`, ``, `3`, 6280),
-        // Aromatizantes
-        new Producto(`42088-3`, `./img/paloma parfum.png`, `AROMATIZANTES`, `PALOMA`, `PARFUM`, `VAINILLA`, ``, `10`, 1800),
-        new Producto(`42055-7`, `./img/paloma aqua balls.png`, `AROMATIZANTES`, `PALOMA`, `WOODY`, `FLORAL`, ``, `3`, 2400),
-        new Producto(`42120-0`, `./img/paloma happy bag.png`, `AROMATIZANTES`, `PALOMA`, `HAPPY BAG`, `SPORT`, ``, `5`, 1890)
-    ]; return PRODUCTO;   
-}; const PRODUCTOS = cargarProductoEnArray(); // Array de Productos
-
 // Variables
+const PRODUCTOS = [];
 let botonesAgregar = document.querySelectorAll(`.agregar`);
 let numerito = document.getElementById(`numerito`);
 let botonesEliminar = document.querySelectorAll(`.eliminar`);
 let  productoEnCarrito = JSON.parse(localStorage.getItem(`productoEnCarrito`)) || []; // Cargar productos del carrito desde localStorage al inicio
 const TITULO_PRINCIPAL = document.getElementById(`tituloPrincipal`);
+
+// cargar productos en array desde productos.json
+async function cargarProductoEnArray() {
+    const archivoJson = './productos.json';
+    try {
+        const response = await fetch(archivoJson);
+        if (!response.ok) {
+            throw new Error(`Error de red: ${response.status}`);
+        }
+        const datos = await response.json();
+        PRODUCTOS.length = 0;
+        PRODUCTOS.push(...datos);
+        cargarProductos(PRODUCTOS); // Llama a cargarProductos después de cargar los productos
+    } catch (error) {
+        console.error('Error al cargar productos desde el archivo JSON:', error);
+    }
+}
+
+// verificar que cargarProductosEnArray se llame antes cualquier otra operacion
+document.addEventListener('DOMContentLoaded', function () { 
+    cargarProductoEnArray(); // Otras operaciones que dependen de la carga de productos
+});
 
 // Cargar Productos en Pagina
 function cargarProductos(productoSeleccionado) {
