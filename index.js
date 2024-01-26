@@ -8,15 +8,15 @@ const TITULO_PRINCIPAL = document.getElementById(`tituloPrincipal`);
 
 // cargar productos en array desde productos.json
 async function cargarProductoEnArray() {
-    const archivoJson = './productos.json';
+    const PRODUCTOS_JSON = './productos.json';
     try {
-        const response = await fetch(archivoJson);
-        if (!response.ok) {
-            throw new Error(`Error de red: ${response.status}`);
+        const RESPONSE = await fetch(PRODUCTOS_JSON);
+        if (!RESPONSE.ok) {
+            throw new Error(`Error de red: ${RESPONSE.status}`);
         }
-        const datos = await response.json();
+        const DATOS = await RESPONSE.json();
         PRODUCTOS.length = 0;
-        PRODUCTOS.push(...datos);
+        PRODUCTOS.push(...DATOS);
         cargarProductos(PRODUCTOS); // Llama a cargarProductos después de cargar los productos
     } catch (error) {
         console.error('Error al cargar productos desde el archivo JSON:', error);
