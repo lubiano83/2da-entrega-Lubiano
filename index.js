@@ -5,6 +5,8 @@ let numerito = document.getElementById(`numerito`);
 let botonesEliminar = document.querySelectorAll(`.eliminar`);
 let  productoEnCarrito = JSON.parse(localStorage.getItem(`productoEnCarrito`)) || []; // Cargar productos del carrito desde localStorage al inicio
 const TITULO_PRINCIPAL = document.getElementById(`tituloPrincipal`);
+const PAGAR_CARRITO = document.getElementById(`pagarCarrito`);
+PAGAR_CARRITO.onclick = verificarProductosEnCarrito;
 
 // cargar productos en array desde productos.json
 async function cargarProductoEnArray() {
@@ -266,7 +268,21 @@ function mostrarPrecioTotalEnCarrito() {
     }
 }; mostrarPrecioTotalEnCarrito(); // Llama a esta función para mostrar el precio total del carrito en el DOM
 
-// Boton Pagar en Carrito
+// Modifica la función rebajarProductosVendidos
+function rebajarProductosVendidos(productosVendidos) {
+    productosVendidos.forEach(productoVendido => {
+        const productoEnStock = PRODUCTOS.find(producto => producto.codigo === productoVendido.codigo);
+        if (productoEnStock) {
+            productoEnStock.cantidad -= productoVendido.cantidad; // Resta la cantidad vendida del stock actual
+            if (productoEnStock.cantidad < 0) { // Asegúrate de que la cantidad no sea negativa
+                productoEnStock.cantidad = 0;
+            }
+        }
+    });
+    cargarProductos(PRODUCTOS); // Actualiza la interfaz HTML después de reducir el stock
+}
+
+// función verificarProductosEnCarrito
 function verificarProductosEnCarrito() {
     if (productoEnCarrito.length > 0) {
         setTimeout(() => {
@@ -277,6 +293,7 @@ function verificarProductosEnCarrito() {
                 confirmButtonColor: `green`
             });
         }, 200);
+        rebajarProductosVendidos(productoEnCarrito); // Llama a la función para reducir el stock de los productos vendidos
         productoEnCarrito.splice(0, productoEnCarrito.length); // Vaciar el carrito al confirmar la compra
     }
     cargarCarrito(productoEnCarrito);
@@ -284,5 +301,3 @@ function verificarProductosEnCarrito() {
     agregarLocalStorage(`productoEnCarrito`, productoEnCarrito);
     mostrarPrecioTotalEnCarrito();
 }
-const PAGAR_CARRITO = document.getElementById(`pagarCarrito`);
-PAGAR_CARRITO.onclick = verificarProductosEnCarrito;
