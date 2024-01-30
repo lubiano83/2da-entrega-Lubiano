@@ -17,7 +17,7 @@ async function cargarProductoEnArray() {
         const DATOS = await RESPONSE.json();
         PRODUCTOS.length = 0;
         PRODUCTOS.push(...DATOS);
-        cargarProductos(PRODUCTOS); // Llama a cargarProductos después de cargar los productos
+        cargarProductos(PRODUCTOS.reverse()); // Llama a cargarProductos después de cargar los productos
     } catch (error) {
         console.error('Error al cargar productos desde el archivo JSON:', error);
     }
@@ -48,7 +48,7 @@ function cargarProductos(productoSeleccionado) {
         `;
         PRODUCTOS_CONTENEDOR.appendChild(ARTICLE);
     }); actualizarBotonesAgregar();
-}; cargarProductos(PRODUCTOS); // Suponiendo que PRODUCTOS es un array de objetos con los datos de los productos
+}; cargarProductos(PRODUCTOS.reverse()); // Suponiendo que PRODUCTOS es un array de objetos con los datos de los productos
 
 // Precio Speradado con un Punto
 function formatearPrecio(precio) {
@@ -117,7 +117,7 @@ BARRA_BUSQUEDA.addEventListener(`input`, function () {
             });
         },300);
         TITULO_PRINCIPAL.innerText = `Todos los Productos`;
-        cargarProductos(PRODUCTOS);
+        cargarProductos(PRODUCTOS.reverse());
     }
 });
 
