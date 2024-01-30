@@ -115,9 +115,9 @@ BARRA_BUSQUEDA.addEventListener(`input`, function () {
                 icon: "error",
                 confirmButtonColor: "red"
             });
-        },300);
+        },200);
         TITULO_PRINCIPAL.innerText = `Todos los Productos`;
-        cargarProductos(PRODUCTOS.reverse());
+        cargarProductos(PRODUCTOS);
     }
 });
 
@@ -156,12 +156,12 @@ function agregarAlCarrito(e) {
                     icon: "warning",
                     confirmButtonColor: `darkgoldenrod`
                 });
-            }, 300);
+            }, 200);
         }
     } else {
         if (PRODUCTO_AGREGADO.cantidad > 0) {
             const NUEVO_PRODUCTO = { ...PRODUCTO_AGREGADO, cantidad: 1 };
-            productoEnCarrito.push(NUEVO_PRODUCTO);
+            productoEnCarrito.reverse().push(NUEVO_PRODUCTO);
         } else {
             setTimeout(() => {
                 Swal.fire({
@@ -170,12 +170,12 @@ function agregarAlCarrito(e) {
                     icon: "warning",
                     confirmButtonColor: `darkgoldenrod`
                 });
-            }, 300);
+            }, 200);
         }
     }
     actualizarNumerito();
     agregarLocalStorage(`productoEnCarrito`, productoEnCarrito);
-    cargarCarrito(productoEnCarrito);
+    cargarCarrito(productoEnCarrito.reverse());
     mostrarPrecioTotalEnCarrito();
 }
 
@@ -276,7 +276,7 @@ function verificarProductosEnCarrito() {
                 icon: "success",
                 confirmButtonColor: `green`
             });
-        }, 300);
+        }, 200);
         productoEnCarrito.splice(0, productoEnCarrito.length); // Vaciar el carrito al confirmar la compra
     }
     cargarCarrito(productoEnCarrito);
