@@ -268,7 +268,7 @@ function mostrarPrecioTotalEnCarrito() {
     }
 }; mostrarPrecioTotalEnCarrito(); // Llama a esta función para mostrar el precio total del carrito en el DOM
 
-// Modifica la función rebajarProductosVendidos
+// rebajando del stock los productos vendidos
 function rebajarProductosVendidos(productosVendidos) {
     productosVendidos.forEach(productoVendido => {
         const productoEnStock = PRODUCTOS.find(producto => producto.codigo === productoVendido.codigo);
@@ -282,7 +282,7 @@ function rebajarProductosVendidos(productosVendidos) {
     cargarProductos(PRODUCTOS); // Actualiza la interfaz HTML después de reducir el stock
 }
 
-// función verificarProductosEnCarrito
+// verificar productos en carrito
 function verificarProductosEnCarrito() {
     if (productoEnCarrito.length > 0) {
         setTimeout(() => {
